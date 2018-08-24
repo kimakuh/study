@@ -1,3 +1,15 @@
+# 프로그램 설치
+- JDK 최신 버전 : 개발 도구인 이클립스와 서버 프로그램인 apache tomcat을 실행하기 위해 설치
+- 이클립스 : JavaScript 애플리케이션을 작성하기 위한 개발 도구
+- Apache tomcat : 웹 서비스 운영울 위한 서버 프로그램
+- 웹 브라우저 : Internet Explorer, Edge, Chrome, Firefox, Safari, Opera 등
+
+
+
+
+
+
+
 # JavaScript 개요
 
 ##  JavaScript 소개
@@ -25,3 +37,6 @@
 - 객체지향 프로그래밍 언어
 - 모든 웹 브라우저가 지원
 - 웹 클라이언트 프로그래밍 뿐만 아니라 다양한 분야에서 사용 됨
+
+
+
