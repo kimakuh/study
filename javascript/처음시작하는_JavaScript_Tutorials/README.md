@@ -5,7 +5,12 @@
 - 웹 브라우저 : Internet Explorer, Edge, Chrome, Firefox, Safari, Opera 등
 
 
+## 정리
 
+- JDK : 개발 도구인 이클립스를 실행하기 위해 설치
+- 웹 브라우저
+- 이클립스
+- Apache Tomcat
 
 
 
