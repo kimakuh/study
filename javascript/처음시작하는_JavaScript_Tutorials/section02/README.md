@@ -4,12 +4,85 @@
 JavaScript 기본 문법
 
 
+
+
+## 04 - JavaScript 변수와 자료형
+
+
+### 자료형
+- JavaScript는 다음과 같은 자료형을 제공
+- 정수 : 100
+- 실수 : 10.1
+- 문자열 : "문자열", '문자열'
+- 참 거짓 : ture, false 
+
+<pre>
+	<script>
+		document.write("정수 : "+ 100+"<br/>");
+		document.write("실수 : "+ 11.11 +"<br/>");
+		document.write("문자열 :" + "안녕하세요" +"<br/>");
+		document.write("문자열 :" + '안녕하세요' + "<br/>");
+		document.write("참 : "+true + "<br/>");
+		document.write("거짓 :" +false+"<br />");
+		
+		
+		document.write("이름은 '홍길동입니다.<br/>");
+		document.write('이름은 "홍길동"입니다.<br/>');
+	</script>
+</pre>
+
+
+
+### 변수
+- 변수는 데이터를 담는 기억장소
+- 자바스크립트는 변수 선언시 자료형을 명시하지 않음 => var라는 키워드를 사용
+- 변수에 담는 값의 자료형에 따라 값을 관리하는 방법을 자동으로 선택
+
+
+<pre>
+	<script>
+		var a1 = 100;
+		var a2 = 11.11;
+		var a3 = "안녕하세요";
+		var a4 = true;
+		
+		document.write("a1 : " + a1 + "<br/>");
+		document.write("a2 : " + a2 + "<br/>");
+		document.write("a3 : " + a3 + "<br/>");
+		document.write("a4 : " + a4 + "<br/>");
+	</script>
+</pre>
+
+
+
+
+### undefined
+- 변수를 선언하고 값을 대입하지 않으면 undefined 값이 자동으로 대입
+
+<pre>
+	<script>
+	 	var a1;
+	 	document.write("a1 : "+ a1 + "<br/>");
+	 	
+	 	var a2 = undefined;
+	 	document.write("a2 : " + a2 + "<br/>");
+	</script>
+</pre>
+
+### 학습정리
+- JavaScript는 정수, 실수, 문자열, 참 거짓 등의 자료형을 제공
+- 변수를 선언할 때 자료형을 명시하지 않고 var 키워드를 사용
+- 변수를 선언하고 값을 대입하지 않으면 undefined 값이 대입
+
+
+
+
+
+
+
+
+
 ## 03 - JavaScript 기초문법
-
-
-
-
-
 
 ### 세미콜론
 - JavaScript는 문장의 마지막에 세미콜론(;)을 찍어 라인이 끝났다는걸 명시
