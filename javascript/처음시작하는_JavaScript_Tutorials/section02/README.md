@@ -7,10 +7,124 @@ JavaScript 기본 문법
 ## 05 - JavaScript 연산자
 
 
+### 비트연산자
+- 정수나 실수 값을 이진수로 변환한 다음에 그 이진수에 대해서 어떠한 작업을 할때 사용됨
+
+
+### 타입연산자
+<pre>
+	<script>
+		var a1 = 100;
+		var a2 = "100";
+		var a3 = false;
+		var a4 = 100.01;
+		
+		var b1 = typeof a1;
+		var b2 = typeof a2;
+		var b3 = typeof a3;
+		var b4 = typeof a4;
+		document.write("b1 : " + b1 + "<br/>");
+		document.write("b2 : " + b2 + "<br/>");
+		document.write("b3 : " + b3 + "<br/>");
+		document.write("b4 : " + b4 + "<br/>");
+
+	</script>
+</pre>
+
+
+
+### 논리연산자
+
+<pre>
+	<script>
+		var a = 10;
+		var b = 20;
+		
+		var c1 = a > 10 && b > 10; // 거짓 && 참
+		// 둘중 하나라도 거짓이면 false
+		document.write("c1 : " + c1 + "<br/>");
+		
+		var c2 = a < 20 && b > 10; // 참 && 참
+		document.write("c2 : " + c2 + "<br/>");
+		// 양쪽 수식의 결과 값이 둘다 참이어야 true
+		
+		
+		var c3 = a > 10 || b > 10;
+		document.write("c3 :" + c3 + "<br/>");
+		// 둘중 하나라도 참이면 true
+		var c4 = a > 10 || b < 10;
+		document.write("c4 : " + c4 + "<br/>")
+		// 양쪽 수식의 결과 값이 둘다 거짓이면 false
+		
+		
+		var c5 = !(a > 10);
+		document.write("c5 : " + c5 + "<br/>");
+		
+	</script>
+</pre>
+
+
+
+### 비교연산자
+
+<pre>
+	<script>
+		var a = 10;
+		var b = 5;
+		
+		document.write(a == b);
+		document.write("<br/>");
+			
+		var c = '10';
+		document.write(a == c);
+		document.write("<br/>");
+		
+		
+		document.write(a === c);
+		document.write("<br/>");
+		
+		
+		var d = 100;
+		var e = 200;
+		
+		var f = d < e ? 100 : 200;
+		// 조건식이 참이면 100이 f에 들어가고
+		// 조건식이 거짓이면 200이 f에 들어간다.
+		
+		document.write("f : " + f + "<br/>");
+		
+		
+	</script>
+</pre>
+
+
+
+
 ### 대입연산자
 
 <pre>
+	<script>
+		var a = 10;
+		document.write("a :" + a + "<br/>");
+		
+		var b = a;
+		document.write("b :" + b + "<br/>");
+		
+		a = 10;
+		b = 3;
+		
+		a += b;
+		document.write("a : "+ a +"<br/>");
+		
+		
+		a = 10;
+		b = 3;
+		
+		a -= b;
+		document.write("a : " + a + "<br/>");
+		
 
+	</script>
 </pre>
 
 
