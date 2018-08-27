@@ -4,6 +4,60 @@
 JavaScript 기본 문법
 
 
+## 05 - JavaScript 연산자
+
+
+### 대입연산자
+
+<pre>
+
+</pre>
+
+
+
+
+
+
+### 산술연산자
+- + 더하기
+- - 빼기
+- * 곱하기
+- / 나누기
+- % 나머지
+- ++ 증가
+- -- 감소
+
+
+<pre>
+	<script>
+		var a = 10;
+		var b = 3;
+		
+		var c = a + b;
+		document.write("c :" + c + "<br/>");
+		
+		
+		var c2 = a - b;
+		var c3 = a * b;
+		var c4 = a / b;
+		var c5 = a % b;
+		
+		document.write("c2 : " + c2 + "<br/>");
+		document.write("c3 : " + c3 + "<br/>");
+		document.write("c4 : " + c4 + "<br/>");
+		document.write("c5 : " + c5 + "<br/>");
+		
+		
+		a++;
+		// a = a + 1;
+		document.write("a :" + a + "<br/>");
+		
+		a--;
+		// a = a - 1;
+		document.write("a : " + a + "<br/>");
+		
+	</script>
+</pre>
 
 
 ## 04 - JavaScript 변수와 자료형
