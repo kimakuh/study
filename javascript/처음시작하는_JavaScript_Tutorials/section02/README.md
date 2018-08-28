@@ -9,8 +9,24 @@ JavaScript 기본 문법
 ## 06 - JavaScript 분기문
 
 
-### else 문
-- if 문의 조건이 만족하지 않을 경우 실행될 부분
+
+
+
+
+
+
+
+
+
+
+
+
+### 제어문
+- 코드는 위에서 아래로 실행되는데 이러한 흐름을 변경할 때 사용하는 것을 제어문이라고 함
+- 제어문은 두 가지로 구분
+- 분기문 : if , switch
+- 반복문 : for, while , do while
+
 
 
 
@@ -36,11 +52,107 @@ JavaScript 기본 문법
 </pre>
 
 
-### 제어문
-- 코드는 위에서 아래로 실행되는데 이러한 흐름을 변경할 때 사용하는 것을 제어문이라고 함
-- 제어문은 두 가지로 구분
-- 분기문 : if , switch
-- 반복문 : for, while , do while
+
+
+
+### else 문
+- if 문의 조건이 만족하지 않을 경우 실행될 부분
+
+<pre>
+	<script>
+		var a1 = 10;
+
+		if (a1 > 20){
+			document.write("a1은 20 보다 큽니다. <br/>");
+		} else{
+			document.write("a1은 20보다 크지 않습니다. <br/>");
+		}
+	</script>
+</pre>
+
+
+
+### else if 문
+- 다중 조건을 가졌을 때 사용 => 조건 중 참에 해당하는 부분만 실행 (위에서 부터 조건 검사)
+- 만약 모든 조건에 만족하지 않을 경우도 필요하다면 마지막에 else 문을 넣는다.
+
+<pre>
+	<script>
+		var a1 = 10;
+
+		if(a1 > 20){
+			document.write("a1는 20보다 큽니다.<br/>");
+		} else if(a1 > 10){
+			document.write("a1은 10보다 큽니다.<br/>");
+		} else if(a1 > 0){
+			document.write("a1은 0보다 큽니다.<br/>");
+		} else{
+			document.write("a1은 20, 10, 0이 아닙니다.<br/>");
+		}
+	</script>
+</pre>
+
+
+
+
+### switch 문
+- 변수나 수식에 해당하는 값 부분으로 이동하여 코드가 실행되는 분기문
+- 모든 조건을 검사하면서 내려오는 if 문과 달리 바로 이동하여 실행 => if문 보다 빠름
+
+<pre>
+	<script>
+		var a1 = 10;
+		
+		if(a1 == 20){
+			document.write("a1은 20입니다.<br/>");
+		} else if (a1 == 10){
+			document.write("a1은 10입니다.<br/>");
+		} else if ( a1 == 0){
+			document.write("a1은 0 입니다.<br/>");
+		} else {
+			document.write("a1은 20, 10, 0이 아닙니다.");
+		}
+		
+		
+		switch(a1){
+		case 20 :
+			document.write("a1은 20입니다.<br/>");
+		case 10 :
+			document.write("a1은 10입니다.<br/>");
+		case 0 :
+			document.write("a1은 0 입니다.<br/>");
+		default :
+			document.write("a1은 20, 10, 0이 아닙니다.<br/>")	
+		}
+		
+		
+		switch(a1){
+		case 20 :
+			document.write("a1은 20입니다.<br/>");
+			break;
+		case 10 :
+			document.write("a1은 10입니다.<br/>");
+			break;
+		case 0 :
+			document.write("a1은 0 입니다.<br/>");
+			break;
+		default :
+			document.write("a1은 20, 10, 0이 아닙니다.<br/>")	
+		}
+			
+	</script>
+</pre>
+
+
+
+
+
+### 학습정리
+- if 문은 조건이 만족할 경우 실행되는 분기문
+- switch 문은 조건에 해당하는 부분으로 이동되어 실행되는 분기문
+
+
+
 
 
 
