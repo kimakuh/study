@@ -1,14 +1,46 @@
-# 처음시작하는 JavaScript Tutorials
-
-## section01
-JavaScript개요 및 개발환경 구축
 
 
-## section02
-JavaScript 기본 문법
+# 프로그램 설치
+- JDK 최신 버전 : 개발 도구인 이클립스와 서버 프로그램인 apache tomcat을 실행하기 위해 설치
+- 이클립스 : JavaScript 애플리케이션을 작성하기 위한 개발 도구
+- Apache tomcat : 웹 서비스 운영울 위한 서버 프로그램
+- 웹 브라우저 : Internet Explorer, Edge, Chrome, Firefox, Safari, Opera 등
 
-## section03
-JavaScript 객체 지향 프로그래밍
 
-## section04
-DOM & BOM
+## 정리
+
+- JDK : 개발 도구인 이클립스를 실행하기 위해 설치
+- 웹 브라우저
+- 이클립스
+- Apache Tomcat
+
+
+
+
+# JavaScript 개요
+
+##  JavaScript 소개
+- JavaScript는 굉장히 가벼운 프로그래밍 언어 =>웹 브라우저에서 실행하는 엔진이 계속해서 발전해옴
+- 웝 애플리커에션 개발 시 많이 사용, 클라이언트 프로그래밍을 위해 사용.
+- 객체지향 프로그래밍 언어
+- 국제 표준 규역을 가지고 있다.
+- 1955년 Netscape 2.0 에서 LiveScript라는 이름으로 발표
+- 이후 웹 개발 분야에서 Java 언어가 크게 성공하자 이름을 JavaScript로 변경
+- 현재 모든 웹 브라우저에서 채택하고 지원
+
+## 사용자 측면에서의 JavaScript
+- 브라우저가 해석하고 실행하는 코드가 HTML 문서에 포함된다.
+- 웹 페이지가 정적인 경우(=웹브라우저가 어떠한 기능도 가지고 있지 않은 경우)에는 필요하지 않으나 사용자와 상호 작용을 하고 변화가 이루어질 경우 JavaScript로 작성한다.
+- 웹 브라우저에서 발생되는 각종 이벤트나 입력 데이터에 대한 처리 등 클라이언트에서 이루어지는 다양한 작업들을 처리 할 수 있다.
+
+## 서버 측면에서의 JavaScript
+- JavaScript는 웹 브라우저에서 동작하는 클라이언트 측 프로그래밍 언어로 사용되어 왔다.
+- 최근에는 다양한 분야에서 JavaScript 언어를 활용하려고 하고 있다.
+- Node.js 같은 프로그래밍 분야를 활용하면 JavaScript를 통해 서버 애플리케이션을 개발할 수 있다.
+
+
+## 정리
+- JavaScript는 클라이언트에서 실행되는 프로그래밍 언어
+- 객체지향 프로그래밍 언어
+- 모든 웹 브라우저가 지원
+- 웹 클라이언트 프로그래밍 뿐만 아니라 다양한 분야에서 사용 됨
