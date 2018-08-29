@@ -79,15 +79,92 @@ JavaScript 기본 문법
 </pre>
 
 
-### 매게 변수
+### 매개 변수
 - 함수를 호출할 때 값을 넘겨줄 수 있으며 이 값은 매개 변수로 받을 수 있음
 - 함수 호출 시 넘겨주는 값의 개수와 정의된 매개 변수의 개수와는 무관
 
 <pre>
+	<script>
+		function f10(a,b){
+			document.write("f10함수 호출<br/>");
+			document.write("a : " + a + "<br/>");
+			document.write("b : " + b + "<br/>");
+			document.write("<hr/>");
+		}
+		
+		
+		f10();
+		// 두 값 다 undefined
+		f10(10);
+		// a 에 10이 들어감
+		f10(10, 20);
+		// a에 10 b에 20 이 들어감
+		f10(10, 20, 30, 40, 50)
+		// a에 10 b에 20이 들어가고 나머지 값은 유실
+	</script>
 </pre>
 
 
 
+
+### arguments 배열
+- 함수를 호출할 때 넘겨주는 값은 모두 매개 변수로 받을 수 있음
+- 그 외에 자바스크립트의 모든 함수들은 argument라는 배열이 자동으로 만들어지는데 여기에도 호출시 넘겨주는 값들이 있음
+
+
+<pre>
+	<script>
+		
+		function f20(){
+			document.write("f20함수 호출<br/>");
+			document.write("배열의 개수 : " + arguments.length + "<br/>");
+			for(var idx in arguments){
+				document.write(idx + " : " + arguments[idx] + "<br/>");
+			}
+			document.write("<hr/>");
+		}
+		
+		f20();
+		f20(10);
+		f20(10, 20);
+		f20(10, 20, 30, 40, 50);
+		
+		
+	</script>
+</pre>
+
+
+
+### 호출 시 함수 넘기기
+- 함수를 호출 할 때 함수를 넘길 수 있으며 매개변수로 받아 호출 할 수 있음
+
+<pre>
+	<script>
+		function f1(f2){
+			f2();
+		}
+		
+		function f3(){
+			document.write("f3함수 호출<br/>");
+		}
+	
+		
+		f1(f3);
+		
+		f1(function(){
+			document.write("익명함수 호출<br/>");
+		});
+		
+		
+	</script>
+</pre>
+
+
+
+### 학습정리
+- 개발자가 필요할 때 동작시킬 수 있도록 만드는 코드블럭 => 함수
+- 함수의 이름은 함수가 존재하는 메모리상의 주소값 => 다른 변수에 담거나 매개 변수로 넘길 수 있음
+- 함수를 호출할 때 넘겨주는 값은 매개 변수로 받거나 arguments 배열로 받을 수 있음
 
 
 
