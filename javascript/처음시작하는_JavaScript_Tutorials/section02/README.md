@@ -4,6 +4,169 @@
 JavaScript 기본 문법
 
 
+## 09 - JavaScript 함수
+
+### 함수
+- 개발자가 필요할 때 동작시킬 수 있도록 만들어 놓는 코드블럭
+- 브러우저는 함수의 존재만 파악하고 있다가 개발자가 원할 때 함수 내부에 작성해 놓은 코드를 실행
+
+<pre>
+	<script>
+		function f1(){
+			document.write("f1함수 호출");
+		}
+		// 실행하면 아무것도 출력되지 않음
+		// 함수를 호출해야 내부에 있는 코드가 출력
+		
+		f1();
+	</script>
+</pre>
+
+
+### 함수의 이름은 함수의 주소값
+- 자바스크립트는 함수의 이름이 함수가 존재하는 메모리의 주소 값을 담은 변수로 취급
+- 자바스크립트에서는 함수의 주소 값을 다른 변수에 담는 것이 가능
+
+
+<pre>
+	<script>
+		function f1(){
+			document.write("f1함수 호출<br/>");
+		}
+		// 실행하면 아무것도 출력되지 않음
+		// 함수를 호출해야 내부에 있는 코드가 출력
+		
+		f1();
+		
+		
+		var f2 = f1;
+		
+		f2();
+	</script>
+</pre>
+
+
+
+### 익명함수
+- 이름이 없는 함수를 익명함수라고 함 => 함수를 만들때 이름을 정하지 않음
+- 이름이 없는 함수이므로 호출을 위해 변수에 담아야 함
+- 매게 변수로 함수를 넘길 때 주로 사용
+
+
+
+<pre>
+	<script>
+		function f1(){
+			document.write("f1함수 호출<br/>");
+		}
+		// 실행하면 아무것도 출력되지 않음
+		// 함수를 호출해야 내부에 있는 코드가 출력
+		
+		f1();
+		
+		
+		var f2 = f1;
+		
+		f2();
+		
+		var f3 = function(){
+			document.write("익명함수 호출<br/>");
+		}
+		
+		
+		f3();
+	</script>
+</pre>
+
+
+### 매게 변수
+- 함수를 호출할 때 값을 넘겨줄 수 있으며 이 값은 매개 변수로 받을 수 있음
+- 함수 호출 시 넘겨주는 값의 개수와 정의된 매개 변수의 개수와는 무관
+
+<pre>
+</pre>
+
+
+
+
+
+
+## 08 - JavaScript 배열
+
+### 배열
+- 여러 기억공간을 하나의 이름으로 관리할 때 사용
+- JavaScript는  [] 로 배열을 표현
+
+<pre>
+	<script>
+		var array = [10, 20, 30, 40, 50];
+		
+		document.write("array : " + array + "<br/>");
+	</script>
+</pre>
+
+
+### 배열의 개수
+- 배열이 관리하는 기억장소의 개수는 length 라는 것을 이용해 파악
+
+<pre>
+	<script>
+		var array = [10, 20, 30, 40, 50];
+		
+		document.write("array : " + array + "<br/>");
+		document.write("array의 개수 : " + array.length + "<br/>");
+	</script>
+</pre>
+
+
+### 배열 요소 접근
+- 배열이름[인덱스] 형태로 작성하면 배열 요소에 접근 가능
+- 인덱스는  0 부터 시작
+
+<pre>
+	<script>
+		var array = [10, 20, 30, 40, 50];
+		
+		document.write("array[0] : " + array[0] + "<br/>");
+		document.write("array[1] : " + array[1] + "<br/>");
+		
+		array[2] = 300;
+		array[3] = 400;
+		
+		document.write("array[2] : " + array[2] + "<br/>");
+		document.write("array[3] : " + array[3] + "<br/>");
+	</script>
+</pre>
+
+### for in
+- 배열이 관리하는 기억 장소를 처름부터 끝까지 순회할 경우 for문을 사용
+- for in은 배열 순회를 목적으로 for문을 사용할 때 보다 편하게 사용할 수 있도록 지원하는 개념
+
+
+<pre>
+	<script>
+		var array = [10, 20, 30, 40, 50];
+		
+		for(var i = 0; i < array.length; i++){
+			document.write(array[i] + "<br/>");
+		}
+		
+		for (var idx in array){
+			document.write(array[idx] +  "<br/>");
+		}
+		
+		
+	</script>
+</pre>
+
+
+
+### 학습정리
+- 여러개의 기억장소를 하나의 이름으로 관리할 때 배열을 사용
+- 배열은 [] 로 표현
+- 배열이 관리하는 기억장소의 접근은 0 부터 시작하는 인덱스 번호를 사용
+- for in 구문을 사용하면 보다 편리하고 배열을 순회 할 수 있음
+
 
 
 ## 07 - JavaScript 반복문
