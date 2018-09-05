@@ -1,6 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
+import SearchBar from 'search_bar';
+
 
 // 리액트돔은 실제 DOM과 상호작용
 // 리액트는 컴포넌트를 생성하고 관리
@@ -8,6 +10,11 @@ import ReactDOM from 'react-dom';
 // Create a new component. [새로운 컴포넌트 생성]
 // This component should produce some HTML [이 컴포넌트는 HTML을 생성]
 // => 컴포넌트를 만든다
+
+
+
+const API_KEY = 'AIzaSyB--J28g5wpB-aYwpIQDVPDfGDpLcSYRgk';
+
 
 const App = () => {
     return <div>Hi!</div>;
