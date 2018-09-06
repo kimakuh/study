@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-import SearchBar from 'search_bar';
+import SearchBar from './components/search_bar';
 
 
 // 리액트돔은 실제 DOM과 상호작용
@@ -17,7 +17,12 @@ const API_KEY = 'AIzaSyB--J28g5wpB-aYwpIQDVPDfGDpLcSYRgk';
 
 
 const App = () => {
-    return <div>Hi!</div>;
+    return (
+    <div>
+        <SearchBar />
+    </div>
+    );
+
 }
 // ==> 컴포넌트가 JSX를 반환
 
