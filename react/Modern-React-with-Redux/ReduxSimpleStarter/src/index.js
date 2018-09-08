@@ -1,5 +1,7 @@
-import React from 'react';
+import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
+import YTSearch from 'youtube-api-search';
+
 
 import SearchBar from './components/search_bar';
 
@@ -16,13 +18,28 @@ import SearchBar from './components/search_bar';
 const API_KEY = 'AIzaSyB--J28g5wpB-aYwpIQDVPDfGDpLcSYRgk';
 
 
-const App = () => {
+
+
+class App extends Component {
+
+constructor(props){
+    super(props);
+
+    this.state = { videos : []};
+
+    YTSearch({key : API_KEY, term :'surfboards'}, function(data){
+        this.setState({videos});
+        // this.setState({videos:videos});
+    });
+}
+
+    render(){    
     return (
     <div>
         <SearchBar />
     </div>
     );
-
+}
 }
 // ==> 컴포넌트가 JSX를 반환
 
