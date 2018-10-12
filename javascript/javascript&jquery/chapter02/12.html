@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>HTML과 자바스크립트의 연결</title>
+</head>
+
+<body>
+    <!--
+        # HTML과 자바스크립트는 완전히 다른언어
+        
+        # 자바스크립트를 HTML 문서에 삽입하여 활용하는 방법
+            1) HTML 내부 자바스크립트
+            2) 외부 자바스크립트 불러오기
+            3) 인라인 자바스크립트
+    -->
+
+    <h2>인라인 자바스크립트</h2>
+    <input type="button" onclick="document.write('Hello JavaScript')" value="버튼을 누르세요." />
+
+
+    <!--
+        # tip
+        자바스크립트가 HTML 문서에 삽입되는 장소가 <head>섹션과 <body>섹션으로 구분된다. 삽입되는 장소에 따른 차이점은 무엇인가?
+        <head> 혹은 <body>안에 들어가도 상관은 없지만 HTML은 순차식 프로그램이기 때문에 브라우저에 반영될 때 위에서 구현한 것이 먼저 브라우저에 반영되고
+        나중에 구현한 태그나 CSS, JavaScript 등이 다음에 적용된다.
+    -->
+
+
+</body>
+
+</html>
