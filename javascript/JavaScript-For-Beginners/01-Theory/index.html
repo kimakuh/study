@@ -5,7 +5,7 @@
         <link rel="stylesheet" href="index.css" />
     </head>
     <body>
-        <h1>This works!</h1>
+        <h1 id="title" class="btn">This works!</h1>
         <script src="index.js"></script>
     </body>
 </html>
@@ -52,7 +52,56 @@
     예시: backgroundColor, typeName, iPhone
 
 
-    consol.log()
+    console.log()의 console은 Object
+    console.log(console)
+
+
+    함수
+
+    function sayHello(argument값(ex1), argument값(ex2)......) {
+        console.log(Hello!, ex1, ex2);
+    }
+
+
+    sayHello("kimakuh", 1500);
+
+    ==> 외부에 있는 데이터를 읽는 함수를 만드는 방법,
+        함수에게 외부에 있는 데이터를 주는 방법
+
+    `` == 백틱
+    '' == 싱글
+    "" == 더블
+
+    ``(백틱)을 사용하면 아래와 같이 실행 가능
+
+    function sayHello(name, age) {
+        console.log(`Hello ${name} you are ${age} years old!`);
+    }
+
+    sayHello("kim", 15);
+
+
+    DOM(Document Object Module)
+
+
+
+
+    조건문 if, else
+
+    && == 두 조건 모두 true여야 함
+    || == 두 조건 중 하나만 true면 true
+
+    true && true = true;
+    false && true = false;
+    true && false = false;
+    false && false = false;
+
+
+    true || true = true;
+    false || true = true;
+    true || false = true;
+    false || false = false;
+
 
 
 -->
