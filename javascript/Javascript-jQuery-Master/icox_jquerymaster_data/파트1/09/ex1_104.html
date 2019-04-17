@@ -1,0 +1,25 @@
+<!DOCTYPE HTML>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>select option선택</title>
+    <script>
+		function siteLink(){
+			var frm = document.frm;
+			var linkValue = frm.site.options[frm.site.selectedIndex].value;
+			if(linkValue){
+				window.open(linkValue,"_blank");
+			} 
+		}
+    </script>
+</head>
+<body>
+	<form name="frm">
+		<select name="site">
+			<option value="">출판사</option>
+			<option value="http://icoxpublish.com">아이콕스</option>
+		</select>
+		<input type="button" value="확인" onclick="siteLink()" />
+	</form>
+</body>
+</html>

@@ -1,0 +1,176 @@
+﻿<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<title>Animation fade method</title>
+<script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+<style>
+#show {
+	width:50px;
+	height:50px;
+	background:#000
+}
+
+#hide {
+	display:none;
+	width:50px;
+	height:50px;
+	background:#000
+}
+</style>
+</head>
+<body>
+
+<!-- 실습 영역 -->	
+	<!-- 1. fadeIn
+	<button type="button">.fadeIn() 테스트하기</button>
+	<div id="hide"></div> -->
+	
+	<!-- 2. fadeOut
+	<button type="button">.fadeOut() 테스트하기</button>
+	<div id="show"></div> -->
+	
+	<!-- 3-1 ~ 3-4. fadeToggle
+	<button type="button">.fadeToggle() 테스트하기</button>
+	<div id="show"></div> -->
+	
+	<!-- 3-4-1. fadeToggle_advanced_fadeIn
+	<button type="button">.fadeToggle() 테스트하기</button>
+	<div id="hide"></div> -->
+	
+	<!-- 3-4-2. fadeToggle_advanced_fadeOut
+	<button type="button">.fadeToggle() 테스트하기</button>
+	<div id="show"></div> -->
+	
+	<!-- 3-5. fadeTo
+	<button type="button">.fadeTo() 테스트하기</button>
+	<div id="show"></div> -->
+
+	
+<div id="result" style="display:none; margin-top:100px">
+	<div class="html" style="display:none">
+		<p><strong>* HTML 결과 값</strong></p>
+		<p class="description"></p>
+	</div>
+	<div class="text" style="display:none">
+		<p><strong>* TEXT 결과 값</strong></p>
+		<p class="description"></p>
+	</div>
+	<div class="boolean" style="display:none">
+		<p><strong>* Boolean 결과 값</strong></p>
+		<div class="true" style="color:#fff; background:blue">TRUE</div>
+		<div class="false" style="color:#fff; background:red">FALSE</div>
+	</div>
+	<div class="result_html" style="display:none"></div>
+</div>
+<script>
+
+// 결과 확인이 필요한 부분만 마크업 코드와 순서를 맞춰 해당 주석을 풀어주세요.
+
+function resultText( target ) {
+	var $result = $("#result");
+	
+	$result
+		.show()
+		.find(".text")
+		.show();
+	if( !target ) {
+		$result.find(".text .description").text("값 없음.");
+		if( target == 0 || target == '0' ) {
+			if( target.length != 0 ) {
+				$result.find(".text .description").text( target );
+			} else {
+				$result.find(".text .description").text("값 없음.");
+			}
+		}
+	} else {
+		$result.find(".description").text( target );
+	}
+}
+
+
+// 1-1. fadeIn_no arguments
+//$("button").click(function() {
+//	$("#hide").fadeIn();
+//});
+
+// 1-2. fadeIn_duration
+//$("button").click(function() {
+//	$("#hide").fadeIn(2500);
+//});
+
+// 1-3. fadeIn_duration, callback
+//$("button").click(function() {
+//	$("#hide").fadeIn(2500, function() {
+//		resultText(".fadeIn 완료되었습니다.");
+//	});
+//});
+
+// 2-1. fadeOut_no arguments
+//$("button").click(function() {
+//	$("#show").fadeOut();
+//});
+
+// 2-2. fadeOut_duration
+//$("button").click(function() {
+//	$("#show").fadeOut(2500);
+//});
+
+// 2-3. fadeOut_duration, callback
+//$("button").click(function() {
+//	$("#show").fadeOut(2500, function() {
+//		resultText(".fadeOut 완료되었습니다.");
+//	});
+//});
+
+
+// 3-1. fadeToggle_no arguments
+//$("button").click(function() {
+//	$("#show").fadeToggle();
+//});
+
+// 3-2. fadeToggle_duration
+//$("button").click(function() {
+//	$("#show").fadeToggle(2500);
+//});
+
+// 3-3. fadeToggle_duration, callback
+//$("button").click(function() {
+//	$("#show").fadeToggle(2500, function() {
+//		resultText(".fadeToggle 완료되었습니다.");
+//	});
+//});
+
+// 3-4. slideToggle_advanced_duration, callback
+// 현재 상태를 보이는 상태(:visible)와 보이지 않는 상태(:hidden)로 구분합니다.
+//$("button").click(function() {
+//	var status = $("#show").is(":visible");
+//	$("#show").fadeToggle(2500, function() {
+//		if( status ) {
+//			resultText(".fadeOut상태로 완료되었습니다.");
+//		} else {
+//			resultText(".fadeIn상태로 완료되었습니다.");
+//		}
+//	});
+//});
+
+// 3-4-1. fadeToggle_advanced_fadeIn
+//$("button").click(function() {
+//	$("#hide").fadeToggle(true);
+//});
+
+// 3-4-2. fadeToggle_advanced_fadeOut
+//$("button").click(function() {
+//	$("#show").fadeToggle(false);
+//});
+
+// 3-5. fadeTo_duration, opacity, callback
+//$("button").click(function() {
+//	$("#show").fadeTo(2500, "0.5", function() {
+//		resultText(".fadeTo(opacity 0.5) 완료되었습니다.");
+//	});
+//});
+</script>
+<!-- //실습 영역 -->
+</body>
+</html>

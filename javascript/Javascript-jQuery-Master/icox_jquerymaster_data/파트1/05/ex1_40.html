@@ -1,0 +1,20 @@
+<!DOCTYPE HTML>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<title>함수내부에 있는 함수 호출</title>
+	<script>		
+		function areaChange(mv){
+			var calculation = function(m){
+				m = m * 0.3025;
+				return m;
+			}
+			var result = calculation(mv).toFixed(1);			
+			document.write(result + '평');
+		}
+		areaChange(112);		
+	</script>
+</head>
+<body>	
+</body>
+</html>

@@ -1,0 +1,53 @@
+﻿<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<title>결과값표시기능 - Array</title>
+<script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+</head>
+<body>
+
+<div id="result" style="display:none; margin-top:100px">
+	<!-- Result : Array -->
+	<div class="array" style="display:none">
+		<p><strong>* Array 결과 값</strong></p>
+		<p class="description" style="background:#eee"></p>
+	</div>
+</div>
+<script>
+// Result : Array
+function resultArray( target, name ) {
+	var $result = $("#result");
+	
+	$result
+		.show()
+		.find(".array")
+		.show();
+		
+	if( !target ) {
+		$result
+			.find(".array .description")
+			.text("값 없음.");
+	} else {
+		$result
+			.find(".array .description")
+			.html(
+				$.map(target, function( data ) {
+					if( !name ) {
+						return data;
+					} else {
+						return data[ name ];
+					}
+				}).join(", ")
+			);
+	}
+}
+
+// 함수 실행 : resultArray(1)
+//resultArray( [1, 2, 3, 4, 5] );
+
+// 함수 실행 : resultArray(2)
+resultArray( [{value:1}, {value:2}], "value" );
+</script>
+</body>
+</html>

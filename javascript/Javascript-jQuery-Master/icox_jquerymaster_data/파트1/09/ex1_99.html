@@ -1,0 +1,20 @@
+<!DOCTYPE HTML>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<title>요소 제거</title>	
+	<script>
+		window.onload = function(){
+			var bt = document.getElementById("bt");
+			var content = document.getElementById("content");
+			bt.onclick = function(){
+				content.removeChild(content.firstChild);
+			}
+		}
+	</script>
+</head>
+<body>
+	<button id="bt">요소 제거</button>
+	<div id="content"><a href='http://icoxpublish.com' target='_blank' title='새창'>아이콕스</a></div>
+</body>
+</html>

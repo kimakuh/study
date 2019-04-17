@@ -1,0 +1,83 @@
+﻿<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, user-scalable=no">
+<title>nano scroller</title>
+<link rel="stylesheet" href="nanoscroller.css">
+<script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+<script src="jquery.nanoscroller.js"></script>
+<style>
+ul {
+	margin : 0;
+	padding : 0
+}
+
+li {
+	list-style : none;
+	padding : 20px 0;
+	border : 1px solid #ccc
+}
+
+.nano { 
+	margin : 10px; 
+	background: #eee; 
+	width : 96%;
+	height : 400px; 
+}
+
+.nano .nano-content { 
+	padding: 10px 
+}
+
+.nano .nano-pane, .nano > .nano-pane   { 
+	width : 6px; 
+	background : none 
+}
+
+.nano .nano-slider { 
+	background: #111
+}
+</style>
+</head>
+<body>
+
+	<div class="nano">
+		<div class="nano-content">
+			<ul>
+				<li>1</li>
+				<li>2</li>
+				<li>3</li>
+				<li>4</li>
+				<li>5</li>
+				<li>6</li>
+				<li>7</li>
+				<li>8</li>
+				<li>9</li>
+				<li>10</li>
+			</ul>
+		</div>
+	</div>
+	
+	<div class="nano">
+		<div class="nano-content">
+			<ul>
+				<li>11</li>
+				<li>12</li>
+				<li>13</li>
+				<li>14</li>
+				<li>15</li>
+				<li>16</li>
+				<li>17</li>
+				<li>18</li>
+				<li>19</li>
+				<li>20</li>
+			</ul>
+		</div>
+	</div>
+	
+<script>
+$(".nano").nanoScroller();
+</script>
+</body>
+</html>

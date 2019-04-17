@@ -1,0 +1,218 @@
+﻿<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<title>final example : check box, radio button</title>
+<script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+<style>
+.wrap label {
+	padding-left:20px; 
+	cursor:pointer;
+	font-size:12px
+}
+
+.wrap label.checked {
+	background-position:0 -15px
+}
+
+.wrap input {
+	display:none
+}
+
+.check_green { 
+	background:url('check_green.png') no-repeat 
+}
+
+.check_orange { 
+	background:url('check_orange.png') no-repeat 
+}
+
+.radio_black { 
+	background:url('radio_black.png') no-repeat 
+}
+</style>
+</head>
+<body>
+
+	<button type="button">선택한 값 확인</button>
+	
+	<!-- 1. 전체 선택 -->
+	<div class="wrap">
+		<input type="checkbox">
+		<label id="ch_test1" class="check_orange check_all">전체선택</label>
+	</div>
+	
+	<!-- 2. 체크박스 -->
+	<div class="wrap">
+		<input type="checkbox" class="ch_test1" name="check_1" value="체크#1">
+		<label class="check_green">체크#1</label>
+	</div>
+	
+	<div class="wrap">
+		<input type="checkbox" class="ch_test1" name="check_2" value="체크#2">
+		<label class="check_green">체크#2</label>
+	</div>
+	<div class="wrap">
+		<input type="checkbox" class="ch_test1" name="check_3" value="체크#3">
+		<label class="check_green">체크#3</label>
+	</div>
+
+	<!-- 3. 라디오버튼 -->
+	<div class="wrap">
+		<input type="radio" name="rd_test" value="라디오#1">
+		<label class="radio_black">라디오#1</label>
+	</div>
+	
+	<div class="wrap">
+		<input type="radio" name="rd_test" value="라디오#2" checked>
+		<label class="radio_black">라디오#2</label>
+	</div>
+	
+	<div class="wrap">
+		<input type="radio" name="rd_test" value="라디오#3">
+		<label class="radio_black">라디오#3</label>
+	</div>
+	
+	
+<div id="result" style="display:none; margin-top:100px">
+	<!-- Result : Array -->
+	<div class="array" style="display:none">
+		<p><strong>* Array 결과 값</strong></p>
+		<p class="description" style="background:#eee"></p>
+	</div>
+</div>
+<script>
+// Result : Array
+function resultArray( target ) {
+	var $result = $("#result");
+	
+	$result
+		.show()
+		.find(".array")
+		.show();
+		
+	if( !target ) {
+		$result
+			.find(".array .description")
+			.text("값 없음.");
+		if( target.length != 0 ) {
+			$result
+				.find(".array .description")
+				.text( target );
+		}
+	} else {
+		$result
+			.find(".array .description")
+			.html(
+				$.map(target, function( data ) {
+					return data.value;
+				}).join(", ")
+			);
+	}
+}
+
+
+// 1. 체크상태 판별 (최초 1회만 실행)
+$("input").each(function() {
+	var $input = $(this);
+	var $label = $input.siblings();
+	
+	if( !$input.prop("checked") ) {
+		$label.removeClass("checked");
+		$input.prop("checked", false);
+	} else {
+		$label.addClass("checked");
+		$input.prop("checked", true);
+	}
+});
+
+// 2-1. 부분 함수, 라디오버튼
+function rd($label, $input, rdAllName) {
+	rdAllName = $input.attr("name");
+			
+	if( !$input.prop("checked") ) {
+		$('input:radio[name="'+ rdAllName +'"]').each(function() {
+			var $targetInput = $(this);
+			var $targetLabel = $targetInput.siblings();
+			
+			$targetLabel.removeClass("checked");
+		});
+		$label.addClass("checked");
+		$input.prop("checked", true);
+	}
+}
+
+// 2-2. 부분 함수, 체크박스
+function ch($label, $input, chName, chCurNum, chNum) {
+	if( !$input.prop("checked") ) {
+		$label.addClass("checked");
+		$input.prop("checked", true);
+	} else {
+		$label.removeClass("checked");
+		$input.prop("checked", false);
+	}
+	
+	chName = $input.attr("class");
+	chNum = $('input:checkbox[class="'+ chName +'"]').length;
+	chCurNum = $('input:checkbox[class="'+ chName +'"]:checked').length;
+	
+	if( chCurNum < chNum ) {
+		$(".check_all").removeClass("checked");
+	}
+}
+
+// 2-3. 부분 함수, 체크박스 전체선택
+function chAll($label, chName) {
+	if( !$label.hasClass("checked") ) {
+		$label.addClass("checked");
+		
+		$('input:checkbox[class="'+ chName +'"]').each(function() {
+			var $targetInput = $(this);
+			var $targetLabel = $targetInput.siblings();
+				
+			$targetInput.prop("checked", true);
+			$targetLabel.addClass("checked");
+		});
+	} else {
+		$label.removeClass("checked");
+		
+		$('input:checkbox[class="'+ chName +'"]').each(function() {
+			var $targetInput = $(this);
+			var $targetLabel = $targetInput.siblings();
+				
+			$targetInput.prop("checked", false);
+			$targetLabel.removeClass("checked");
+		});
+	}
+}
+
+// 3. 동작 (이벤트 발생시 수시로 실행)
+$("label").click(function() {
+	var $label = $(this);
+	var $input = $label.siblings();
+	var chName = $label.attr("id");
+	var chCurNum = 0;
+	var chNum = 0;
+	var rdAllName = '';
+	
+	switch( $input.attr("type") ) {
+		case "radio" :
+			rd($label, $input, rdAllName);
+		break;
+		case "checkbox" :
+			if( !$label.hasClass("check_all") ) {
+				ch($label, $input, chName, chCurNum, chNum);
+			} else {
+				chAll($label, chName);	
+			}
+		break;
+	}
+});
+
+// 4. 확인 (선택한 값 확인)
+$("button").click(function() {
+	resultArray( $(":input").serializeArray() );
+});
+</script>
+</body>
+</html>

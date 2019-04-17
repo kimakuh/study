@@ -1,0 +1,22 @@
+<!DOCTYPE HTML>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<title>클로저</title>
+	<script>		
+		function closure(n){			
+			return function(){				
+				return ++n;
+			}
+		}
+		var a = closure(10);		
+		document.write(a() + "<br>");
+		document.write(a() + "<br>");
+		var b = closure(20);
+		document.write(b() + "<br>");		
+		document.write(b());
+	</script>
+</head>
+<body>	
+</body>
+</html>

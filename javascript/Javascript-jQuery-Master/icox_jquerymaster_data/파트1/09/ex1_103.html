@@ -1,0 +1,50 @@
+<!DOCTYPE HTML>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>form 객체 속성</title>
+    <script>
+		function check(){
+			var frm = document.frm;            
+			if(!frm.agree1.checked){
+				alert("약관에 동의하세요!");
+				frm.agree1.focus();
+				return;
+			}
+			if(!frm.agree2.checked){
+				alert("개인정보에 동의하세요!");
+				frm.agree2.focus();
+				return;
+			}
+			location.href = "http://icoxpublish.com";			
+		}
+		function allCheck(){            
+			with(document.frm){
+				if(all.checked){
+					for(var i=0;i<length;i++){
+						if(elements[i].type == "checkbox"){
+							elements[i].checked = true;
+						}
+					}
+				}else{
+					for(var i=0;i<length;i++){
+						if(elements[i].type == "checkbox"){
+							elements[i].checked = false;
+						}
+					}
+				}
+			}
+		}
+    </script>
+</head>
+<body>
+    <form action="#" name="frm">
+        <div><input type="checkbox" name="all" id="all" onclick="allCheck()" /><label for="all">전체동의</label> </div>    
+        <div><textarea cols="30" rows="10">약관동의</textarea></div>
+        <p><input type="checkbox" name="agree1" id="agree1" /><label for="agree1">약관동의</label></p>
+        <div><textarea cols="30" rows="10">개인정보</textarea></div>
+        <p><input type="checkbox" name="agree2" id="agree2" /><label for="agree2">개인정보동의</label></p>
+        <p><input type="button" value="동의" onclick="check()" /><input type="reset" value="취소" /></p>
+    </form>    
+</body>
+</html>

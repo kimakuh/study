@@ -1,0 +1,22 @@
+<!DOCTYPE HTML>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<title>요소 생성</title>	
+	<script>
+		window.onload = function(){
+			var bt = document.getElementById("bt");
+			bt.onclick = createNode;		
+			function createNode(){
+				var div = document.createElement("div");
+				var txt = document.createTextNode("div 요소가 생성 되었습니다!");
+				div.appendChild(txt);
+				document.body.appendChild(div);	
+			}
+		}
+	</script>
+</head>
+<body>
+	<button id="bt">요소 생성</button>	
+</body>
+</html>

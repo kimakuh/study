@@ -1,0 +1,23 @@
+<!DOCTYPE HTML>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<title>for in문</title>
+<script>
+	var str = ""
+	var circle = {
+		color  : "red",
+		diameter : 100,
+		radius : function(){
+			var n = this.diameter/2;
+			return n;
+		}
+	}	
+	for(var i in circle){
+		document.write(i + " : " + circle[i] + "<br>");
+	}
+</script>
+</head>
+<body>	
+</body>
+</html>

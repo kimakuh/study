@@ -1,0 +1,86 @@
+﻿<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, user-scalable=no">
+<title>owlcarousel trigger</title>
+<link rel="stylesheet" href="owl-carousel/owl.carousel.css">
+<link rel="stylesheet" href="owl-carousel/owl.theme.css">
+<script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+<script src="owl-carousel/owl.carousel.js"></script>
+<style>
+html, body, 
+.owl-carousel, .owl-wrapper-outer, .owl-wrapper, 
+.owl-item, .owl-item > div, .owl-item > div > div {
+	height:97%
+}
+
+.item > div { font-size:10em }
+
+.red { background : red }
+.orange { background : orange }
+.yellow { background : yellow }
+.green { background : green }
+</style>
+</head>
+<body>
+
+	<div id="owl-example" class="owl-carousel">
+		<div class="item">
+			<div class="red">1</div>
+		</div>
+		<div class="item">
+			<div class="orange">2</div>
+		</div>
+		<div class="item">
+			<div class="yellow">3</div>
+		</div>
+		<div class="item">
+			<div class="green">4</div>
+		</div>
+	</div>
+	
+<div class="btn_area">
+	<a href="#" id="prev">이전</a>
+	<a href="#" id="next">다음</a>
+	<a href="#" id="goto">애니메이션 지정이동</a>
+	<a href="#" id="jump">애니메이션 없는 지정이동</a>
+	<a href="#" id="play">자동플레이, 1.5초</a>
+	<a href="#" id="stop">자동플레이 멈춤</a>
+</div>
+	
+<script>
+var $owl = $("#owl-example").owlCarousel({ singleItem : true });
+
+// 1. 이전 이동
+$("#prev").click(function() {
+	$owl.trigger("owl.prev");
+});
+
+// 2. 다음 이동
+$("#next").click(function() {
+	$owl.trigger("owl.next");
+});
+
+// 3. 애니메이션 지정 이동
+$("#goto").click(function() {
+	$owl.trigger("owl.goTo", 2);
+});
+
+// 4. 애니메이션 없는 지정 이동
+$("#jump").click(function() {
+	$owl.trigger("owl.jumpTo", 3);
+});
+
+// 5. 자동 플레이
+$("#play").click(function() {
+	$owl.trigger("owl.play", 1500);
+});
+
+// 6. 자동 플레이 멈춤
+$("#stop").click(function() {
+	$owl.trigger("owl.stop");
+});
+</script>
+</body>
+</html>

@@ -1,0 +1,165 @@
+﻿<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<title>Animation slide method</title>
+<script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+<style>
+#show {
+	width:50px;
+	height:50px;
+	background:#000
+}
+
+#hide {
+	display:none;
+	width:50px;
+	height:50px;
+	background:#000
+}
+</style>
+</head>
+<body>
+
+<!-- 실습 영역 -->	
+	<!-- 1. slideDown
+	<button type="button">.slideDown() 테스트하기</button>
+	<div id="hide"></div> -->
+	
+	<!-- 2. slideUp
+	<button type="button">.slideUp() 테스트하기</button>
+	<div id="show"></div> -->
+	
+	<!-- 3-1 ~ 3-4. slideToggle
+	<button type="button">.slideToggle() 테스트하기</button>
+	<div id="show"></div> -->
+	
+	<!-- 3-4-1. toggle_advanced_show
+	<button type="button">.slideToggle(true) 테스트하기</button>
+	<div id="hide"></div> -->
+	
+	<!-- 3-4-2. toggle_advanced_hide
+	<button type="button">.slideToggle(false) 테스트하기</button>
+	<div id="show"></div> -->
+
+	
+<div id="result" style="display:none; margin-top:100px">
+	<div class="html" style="display:none">
+		<p><strong>* HTML 결과 값</strong></p>
+		<p class="description"></p>
+	</div>
+	<div class="text" style="display:none">
+		<p><strong>* TEXT 결과 값</strong></p>
+		<p class="description"></p>
+	</div>
+	<div class="boolean" style="display:none">
+		<p><strong>* Boolean 결과 값</strong></p>
+		<div class="true" style="color:#fff; background:blue">TRUE</div>
+		<div class="false" style="color:#fff; background:red">FALSE</div>
+	</div>
+	<div class="result_html" style="display:none"></div>
+</div>
+<script>
+
+// 결과 확인이 필요한 부분만 마크업 코드와 순서를 맞춰 해당 주석을 풀어주세요.
+
+function resultText( target ) {
+	var $result = $("#result");
+	
+	$result
+		.show()
+		.find(".text")
+		.show();
+	if( !target ) {
+		$result.find(".text .description").text("값 없음.");
+		if( target == 0 || target == '0' ) {
+			if( target.length != 0 ) {
+				$result.find(".text .description").text( target );
+			} else {
+				$result.find(".text .description").text("값 없음.");
+			}
+		}
+	} else {
+		$result.find(".description").text( target );
+	}
+}
+
+
+// 1-1. slideDown_no arguments
+//$("button").click(function() {
+//	$("#hide").slideDown();
+//});
+
+// 1-2. slideDown_duration
+//$("button").click(function() {
+//	$("#hide").slideDown(2500);
+//});
+
+// 1-3. slideDown_duration, callback
+//$("button").click(function() {
+//	$("#hide").slideDown(2500, function() {
+//		resultText(".slideDown이 완료되었습니다.");
+//	});
+//});
+
+// 2-1. slideUp_no arguments
+//$("button").click(function() {
+//	$("#show").slideUp();
+//});
+
+// 2-2. slideUp_duration
+//$("button").click(function() {
+//	$("#show").slideUp(2500);
+//});
+
+// 2-3. slideUp_duration, callback
+//$("button").click(function() {
+//	$("#show").slideUp(2500, function() {
+//		resultText(".slideUp이 완료되었습니다.");
+//	});
+//});
+
+// 3-1. slideToggle_no arguments
+//$("button").click(function() {
+//	$("#show").slideToggle();
+//});
+
+// 3-2. slideToggle_duration
+//$("button").click(function() {
+//	$("#show").slideToggle(2500);
+//});
+
+// 3-3. slideToggle_duration, callback
+//$("button").click(function() {
+//	$("#show").slideToggle(2500, function() {
+//		resultText(".slideToggle이 완료되었습니다.");
+//	});
+//});
+
+// 3-4. slideToggle_advanced_duration, callback
+//$("button").click(function() {
+//	// 현재 상태를 보이는 상태(:visible)와 보이지 않는 상태(:hidden)로 구분합니다.
+//	var status = $("#show").is(":visible");
+//
+//	$("#show").slideToggle(2500, function() {
+//		if( status ) {
+//			resultText(".slideToggle이 .slideUp상태로 완료되었습니다.");
+//		} else {
+//			resultText(".slideToggle이 .slideDown상태로 완료되었습니다.");
+//		}
+//	});
+//});
+
+// 3-4-1. slideToggle_advanced_slideDown
+//$("button").click(function() {
+//	$("#hide").slideToggle(true);
+//});
+
+// 3-4-2. slideToggle_advanced_slideUp
+//$("button").click(function() {
+//	$("#show").slideToggle(false);
+//});
+</script>
+<!-- //실습 영역 -->
+</body>
+</html>

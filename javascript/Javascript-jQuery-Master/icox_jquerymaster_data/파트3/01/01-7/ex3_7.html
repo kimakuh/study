@@ -1,0 +1,29 @@
+<!DOCTYPE HTML>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>폼 유효성 검사 만들기</title>
+    <link href="style.css" type="text/css" rel="stylesheet">
+	<script src="http://code.jquery.com/jquery-1.11.2.min.js"></script>
+    <script src="validator.js"></script>
+</head>
+<body>  
+    <div id="wrap">
+        <h1>SIGN UP</h1>
+        <p>'*'는 필수 입력사항</p>
+        <form id="frm">
+            <dl>
+                <dt><label for="id"><strong>*</strong> 아이디</label></dt>
+                <dd><input type="text" name="id" id="id" /></dd>
+                <dt><label for="pw"><strong>*</strong> 비밀번호</label></dt>
+                <dd><input type="password" name="pw" id="pw" /></dd>
+                <dt><label for="repw"><strong>*</strong> 비밀번호 확인</label></dt>
+                <dd><input type="password" name="repw" id="repw" /></dd>
+                <dt><label for="email"><strong>*</strong> 이메일</label></dt>
+                <dd><input type="text" name="email" id="email" /></dd>
+            </dl>
+            <div><input type="submit" value="전송"></div>
+        </form>
+    </div>
+</body>
+</html>

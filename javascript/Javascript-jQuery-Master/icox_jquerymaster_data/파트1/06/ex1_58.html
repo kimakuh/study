@@ -1,0 +1,57 @@
+<!DOCTYPE HTML>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>Date 객체</title>
+    <script>
+		var date1 = new Date();	
+		var day = "";
+		document.write(date1.getFullYear() + "년" + "<br>");
+		document.write((date1.getMonth()+1) + "월" + "<br>");
+		document.write(date1.getDate() + "일" + "<br>");
+		switch(date1.getDay()){
+			case 0 :
+			day = "일";
+			break;
+			case 1 :
+			day = "월";
+			break;
+			case 2 :
+			day = "화";
+			break;
+			case 3 :
+			day = "수";
+			break;
+			case 4 :
+			day = "목";
+			break;
+			case 5 :
+			day = "금";
+			break;
+			case 6 :
+			day = "토";
+			break;
+
+		}
+		document.write(day + "요일" + "<br>");
+		document.write(date1.getHours() + "시" + "<br>");
+		document.write(date1.getMinutes() + "분" + "<br>");
+		document.write(date1.getSeconds() + "초" + "<br>");
+		document.write(date1.getMilliseconds() + "밀리초" + "<br>");
+		document.write(date1.toString() + "<br>");
+		document.write(date1.toLocaleString() + "<br>");	
+		document.write("1970년 1월 1일 자정 이후 부터 경과한 밀리초 " + date1.getTime() + "<br>");
+
+		var date2 = new Date();	
+		date2.setFullYear(2015);
+		date2.setMonth(7);		
+		date2.setDate(24);
+		date2.setHours(10);
+		date2.setMinutes(20);
+		date2.setSeconds(50);
+		document.write(date2.toString() + "<br>");
+		document.write(date2.toLocaleString() + "<br>");		
+    </script>
+</head>
+<body>    
+</body>

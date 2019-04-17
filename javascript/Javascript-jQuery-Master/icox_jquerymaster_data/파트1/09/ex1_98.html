@@ -1,0 +1,21 @@
+<!DOCTYPE HTML>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<title>innerHTML</title>	
+	<script>
+		window.onload = function(){
+			var bt = document.getElementById("bt");
+			var content = document.getElementById("content");
+			bt.onclick = createNode;		
+			function createNode(){				
+				content.innerHTML = "<a href='http://icoxpublish.com' target='_blank' title='새창'>아이콕스</a>";	
+			}
+		}
+	</script>
+</head>
+<body>
+	<button id="bt">요소 생성</button>
+	<div id="content"></div>
+</body>
+</html>

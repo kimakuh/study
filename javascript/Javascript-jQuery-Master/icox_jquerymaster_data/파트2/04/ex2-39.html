@@ -1,0 +1,53 @@
+﻿<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<title>Animation etcetera method</title>
+<script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+<style>
+#box {
+	position:absolute;
+	top:50px;
+	left:0;
+	width:50px;
+	height:50px;
+	background:#000
+}
+</style>
+</head>
+<body>
+
+<!-- 실습 영역 -->	
+	<!-- 1 ~ 3, $.fx.interval, $.fx.off, easing -->
+	<button type="button">애니메이션 테스트</button>
+	<div id="box"></div>
+	
+<script src="jquery.easing.1.3.js"></script>
+<script>
+
+// 결과 확인이 필요한 부분만 해당 주석을 풀어주세요.
+
+// 1. $.fx.interval
+//$.fx.interval = 100;
+	
+// 2. $.fx.off = true;
+//$.fx.off = true;
+
+// 3. easing 
+//http://gsgd.co.uk/sandbox/jquery/easing/
+
+//$.easing.def = "easeInOutElastic";
+//
+//$("button").click(function() {
+//	if( !$("button").hasClass("action") ) {
+//		$("#box").animate({ left : $(window).width() - 50 });
+//		$("button").addClass("action");
+//	} else {
+//		$("#box").animate({ left : 0 });
+//		$("button").removeClass("action");
+//	}
+//});
+</script>
+<!-- //실습 영역 -->
+</body>
+</html>

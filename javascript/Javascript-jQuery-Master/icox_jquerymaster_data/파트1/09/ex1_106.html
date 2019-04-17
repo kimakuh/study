@@ -1,0 +1,20 @@
+<!DOCTYPE HTML>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>form 객체 this</title>
+<script>
+	function view(f){
+		alert(f);
+	}
+</script>
+</head>
+<body>
+<form name="frm1">	
+	<input type="button" value="확인" onclick="javascript:view(this.value)"/>
+</form>
+<form name="frm2">	
+	<input type="button" value="form 확인" onclick="javascript:view(this.form.name)"/>
+</form>
+</body>
+</html>

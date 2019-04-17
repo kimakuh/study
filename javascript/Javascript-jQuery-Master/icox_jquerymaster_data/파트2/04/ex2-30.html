@@ -1,0 +1,138 @@
+﻿<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<title>Event mouse movement method</title>
+<script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+<style>
+#outer {
+	position : relative;
+	top : 30px;
+	left : 30px;
+	width : 300px;
+	height : 300px;
+	background : #ccc
+}
+
+#inner {
+	position : absolute;
+	top : 30px;
+	left : 30px;
+	width : 240px;
+	height : 240px;
+	background : #333
+}
+</style>
+</head>
+<body>
+
+<!-- 실습 영역 -->	
+	<!-- 1 ~ 8 예제 -->
+	<div id="outer">
+		<div id="inner">
+			<input type="text" value="focus 테스트">
+		</div>
+	</div>
+
+
+<div id="result" style="display:none; margin-top:100px">
+	<div class="text" style="display:none">
+		<p><strong>* TEXT 결과 값</strong></p>
+		<p class="description"></p>
+	</div>
+</div>	
+<script>
+function resultText( target ) {
+	var $result = $("#result");
+	
+	$result
+		.show()
+		.find(".text")
+		.show();
+		
+	if( !target ) {
+		$result
+			.find(".text .description")
+			.text("값 없음.");
+		if( target.length != 0 ) {
+			$result
+				.find(".text .description")
+				.text( target );
+		}
+	} else {
+		$result
+			.find(".text .description")
+			.text( target );
+	}
+}
+
+// 1. mouseover
+var activeNumber = 0;
+$("#outer").mouseover(function() {
+	activeNumber++;
+	resultText("이벤트 발생 횟수 : " + activeNumber);
+});
+
+// 2. mouseout
+$("#outer").mouseout(function() {
+	resultText("마우스 커서가 벗어났습니다.");
+});
+
+// 3. mouseenter
+var activeNumber = 0;
+$("#outer").mouseenter(function() {
+	activeNumber++;
+	resultText("이벤트 발생 횟수 : " + activeNumber);
+});
+
+// 4. mouseleave
+$("#outer").mouseleave(function() {
+	resultText("마우스 커서가 벗어났습니다.");
+});
+
+// 5-1. hover
+$("#outer").hover(
+	function() {
+		resultText("마우스 커서가 해당 요소에 올라가 있습니다.");
+	},
+	function() {
+		resultText("마우스 커서가 벗어났습니다.");
+	}
+);
+
+// 5-2. (hover) mouseenter + mouseleave
+$("#outer")
+	.mouseenter(function() {
+		resultText("마우스 커서가 해당 요소에 올라가 있습니다.");
+	})
+	.mouseleave(function() {
+		resultText("마우스 커서가 벗어났습니다.");
+	});
+
+// 6-1. mousemove_#outer
+$("#outer").mousemove(function( event ) {
+	var pageX = event.pageX;
+	var pageY = event.pageY;
+	resultText("pageX : " + pageX + " ,pageY : " + pageY);
+});
+
+// 6-2. mousemove_document
+$(document).mousemove(function( event ) {
+	var pageX = event.pageX;
+	var pageY = event.pageY;
+	resultText("pageX : " + pageX + " ,pageY : " + pageY);
+});
+
+// 7. focusin
+$("input").focusin(function() {
+	resultText("포커스가 표시되어 있습니다.");
+});
+
+// 8. focusout
+$("input").focusout(function() {
+	resultText("포커스가 빠져나갔습니다.");
+});
+</script>
+<!-- //실습 영역 -->
+</body>
+</html>

@@ -1,0 +1,150 @@
+﻿<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<title>Etcetera miscellaneous Method</title>
+<script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+</head>
+<body>
+
+<!-- 실습 영역 -->
+	<div class="wrap">
+		<div><a href="#">DIV태그 : #1</a></div>
+		<div><a href="#">DIV태그 : #2</a></div>
+		<div class="center">
+			<a href="#">DIV태그 : #3</a>
+		</div>
+		<div><a href="#">DIV태그 : #4</a></div>
+		<div><a href="#">DIV태그 : #5</a></div>
+	</div>
+
+	
+<div id="result" style="display:none; margin-top:100px">
+	<div class="html" style="display:none">
+		<p><strong>* HTML 결과 값</strong></p>
+		<p class="description"></p>
+	</div>
+	<div class="text" style="display:none">
+		<p><strong>* TEXT 결과 값</strong></p>
+		<p class="description" style="background:#eee"></p>
+	</div>
+	<div class="boolean" style="display:none">
+		<p><strong>* Boolean 결과 값</strong></p>
+		<div class="true" style="color:#fff; background:blue">TRUE</div>
+		<div class="false" style="color:#fff; background:red">FALSE</div>
+	</div>
+	<div class="result_html" style="display:none"></div>
+</div>
+<script>
+
+// 결과 확인이 필요한 부분만 해당 주석을 풀어주세요.
+
+function resultSelector( selector, lineColor ) {
+	if( !lineColor ) lineColor = "red";
+	selector.css({ outline : "3px solid " + lineColor });
+}
+
+function resultText( target ) {
+	var $result = $("#result");
+	
+	$result
+		.show()
+		.find(".text")
+		.show();
+	if( !target ) {
+		$result.find(".text .description").text("값 없음.");
+		if( target == 0 || target == '0' ) {
+			if( target.length != 0 ) {
+				$result.find(".text .description").text( target );
+			} else {
+				$result.find(".text .description").text("값 없음.");
+			}
+		}
+	} else {
+		$result.find(".description").text( target );
+	}
+}
+
+function resultHtml( target ) {
+	var $result = $("#result");
+
+	$result
+		.show()
+		.find(".html")
+		.show();
+	if( !target ) {
+		$result.find(".description").text("값 없음.");
+	} else {
+		if( target.length != 0 ) {
+			var message_html = $(".result_html").append( $(target).clone() ).html();
+			$result.find(".html .description").empty().text( message_html );
+		} else {
+			$result.find(".html .description").text("값 없음.");
+		}
+	}
+}
+
+function resultBoolean( result ) {
+	var $result = $("#result");
+	
+	$result
+		.show()
+		.find(".boolean")
+		.show();
+	if( result ) {
+		$result.find(".boolean .false").hide();
+	} else {
+		$result.find(".boolean .true").hide();
+	}
+}
+
+
+
+// 1. get()
+//resultHtml( $(".wrap div").get(2) );
+
+// 2. index()
+//resultText( "해당 요소의 Index : " + $(".wrap .center").index() );
+
+// 3. each()
+// 3-1. 차례대로 인덱스(Index) 나열하기
+//var eachText = "";
+//
+//$(".wrap div").each(function( index, element ) {
+//	if( index != 0 ) {
+//		eachText += ", " + index.toString();
+//	} else {
+//		eachText += index.toString();
+//	}
+//});
+//
+//resultText( eachText );
+
+// 3-2. 차례대로 엘리먼트(Element) 나열하기
+//$(".wrap div").each(function( index, element ) {
+//	resultHtml( element );
+//});
+
+//$(".wrap div").each(function( index, element ) {
+//	resultHtml( $(this) );
+//});
+
+// 3-3. 해당 엘리먼트(Element)의 텍스트 값 차례로 나열하기
+//var eachText = "";
+//
+//$(".wrap div").each(function( index, element ) {
+//	if( index != 0 ) {
+//		eachText += ", " + $(element).text();
+//	} else {
+//		eachText += $(element).text();
+//	}
+//});
+//
+//resultText( eachText );
+
+// 4. length
+//resultText( $(".wrap div").length );
+</script>
+<!-- //실습 영역 -->
+</body>
+</html>

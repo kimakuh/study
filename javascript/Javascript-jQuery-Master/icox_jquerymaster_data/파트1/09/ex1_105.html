@@ -1,0 +1,27 @@
+<!DOCTYPE HTML>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>select option 추가 및 삭제</title>
+    <script>
+		window.onload = function(){
+			var frm = document.frm;
+			frm.subject.add(new Option("제이쿼리","jQuery"));
+			frm.job.length = 2;
+		}
+    </script>
+</head>
+<body>
+	<form name="frm">
+		<select name="subject">
+			<option value="">과목선택</option>
+			<option value="javascript">자바스크립트</option>
+		</select>
+		<select name="job">
+			<option value="">직업선택</option>
+			<option value="javascript">학생</option>
+			<option value="javascript">회사원</option>
+		</select>
+	</form>
+</body>
+</html>

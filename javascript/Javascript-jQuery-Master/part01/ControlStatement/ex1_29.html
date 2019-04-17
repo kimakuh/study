@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Break문</title>
+    <script>
+        var num = prompt("1 ~ 20 중 하나의 숫자 값 입력" , "");
+        var result = "";
+        for (var i = 1; i<= 20; i++) {
+            result += i + "<br>";
+            if(i == num) {
+                break;
+            }
+        }
+        document.write(result);
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

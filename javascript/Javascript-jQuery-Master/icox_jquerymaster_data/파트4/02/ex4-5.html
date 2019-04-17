@@ -1,0 +1,27 @@
+﻿<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<title>datepicker</title>
+<link rel="stylesheet" href="http://code.jquery.com/ui/1.11.2/themes/smoothness/jquery-ui.css">
+<script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+<script src="http://code.jquery.com/ui/1.11.2/jquery-ui.js"></script>
+</head>
+<body>
+	<label for="date">최대, 최소날짜 속성 설정</label>
+	<input type="text" id="date">
+
+
+<script>
+// Options
+// w : 주
+// m : 월
+// y : 년
+
+$("input").datepicker({
+	minDate : "-5",
+	maxDate : "+5"
+});
+</script>
+</body>
+</html>

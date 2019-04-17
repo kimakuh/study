@@ -1,0 +1,22 @@
+<!DOCTYPE HTML>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<title>이벤트 강제 실행</title>	
+	<style>
+		div{border:1px solid red;cursor:pointer;}
+	</style>
+	<script>
+		window.onload = function(){
+			var a = document.getElementById("bt");		
+			bt.onclick = function(){
+				alert("아이콕스");		
+			}
+			bt.onclick();
+		}
+	</script>	
+</head>
+<body>
+	<div id="bt">클릭</div>	
+</body>
+</html>

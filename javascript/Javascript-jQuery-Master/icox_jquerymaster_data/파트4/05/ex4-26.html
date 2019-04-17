@@ -1,0 +1,69 @@
+﻿<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<title>jquery cookie final example</title>
+<script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+<script src="jquery.cookie.js"></script>
+</head>
+<body>
+	
+	<input type="text" id="cookie" placeholder="아이디를 등록하세요.">
+	<button id="add">쿠키 등록</button>
+	<button id="remove">쿠키 삭제</button>
+	
+<div id="result" style="display:none; margin-top:100px">
+	<!-- Result : Text -->
+	<div class="text" style="display:none">
+		<p><strong>* TEXT 결과 값</strong></p>
+		<p class="description" style="background:#eee"></p>
+	</div>
+</div>	
+<script>
+// Result : Text
+function resultText( target ) {
+	var $result = $("#result");
+	
+	$result
+		.show()
+		.find(".text")
+		.show();
+		
+	if( !target ) {
+		$result
+			.find(".text .description")
+			.text("값 없음.");
+		if( target.length != 0 ) {
+			$result
+				.find(".text .description")
+				.text( target );
+		}
+	} else {
+		$result
+			.find(".text .description")
+			.text( target );
+	}
+}
+
+
+// 만약, 쿠키가 있으면 값을 input 엘리먼트로 넘겨준다.
+if( $.cookie("id") ) {
+	$("#cookie").val( $.cookie("id") );
+}
+
+// 1. 쿠키 등록
+$("#add").click(function() {
+	if( $("#cookie").val().length > 0 ) {
+		$.cookie("id", $("#cookie").val(), { expires : 1 });
+		resultText( $.cookie("id") );
+	}
+});
+
+// 2. 쿠키 삭제
+$("#remove").click(function() {
+	$.removeCookie("id");
+	resultText( $.cookie("id") );
+});
+</script>
+</body>
+</html>

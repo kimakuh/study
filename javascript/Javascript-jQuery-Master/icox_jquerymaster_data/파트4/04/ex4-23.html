@@ -1,0 +1,36 @@
+﻿<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<title>jstree plugin : search</title>
+<link rel="stylesheet" href="dist/themes/default/style.css">
+<script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+<script src="dist/jstree.js"></script>
+</head>
+<body>
+
+<input type="text" id="query" placeholder="찾을 문자를 적어넣으세요.">
+<div id="jstree">
+	<ul>
+		<li>
+			폴더1
+			<ul>
+				<li>폴더1-1</li>
+				<li>폴더1-2</li>
+			</ul>
+		</li>
+	</ul>
+</div>
+
+<script>
+$("#jstree").jstree({
+	"plugins" : ["search"]
+});
+
+$("#query").keyup(function() {
+	var $jstree = $("#jstree").jstree(true);
+	$jstree.search( $("#query").val() );
+});
+</script>
+</body>
+</html>

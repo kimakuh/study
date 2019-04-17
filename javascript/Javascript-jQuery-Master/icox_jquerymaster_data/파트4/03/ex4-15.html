@@ -1,0 +1,60 @@
+﻿<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<title>final example : datepicker, datejs</title>
+<link rel="stylesheet" href="http://code.jquery.com/ui/1.11.2/themes/smoothness/jquery-ui.css">
+<script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+<script src="http://code.jquery.com/ui/1.11.2/jquery-ui.js"></script>
+<script src="date.js"></script>
+</head>
+<body>
+
+	<label for="date_first">시작일</label>
+	<input type="text" id="date_first">
+
+	<label for="date_last">종료일</label>
+	<input type="text" id="date_last">
+	
+<script>
+var $dt_first = $("#date_first");
+var $dt_last = $("#date_last");
+
+function parseDate( dateValue, addDaysNum ) {
+	var result;
+	
+	if( !addDaysNum ) {
+		result = Date.parseExact( dateValue, "M/d/yyyy" )
+	} else {
+		result = Date
+			.parseExact( dateValue, "M/d/yyyy" )
+			.addDays( addDaysNum );
+	}
+	return result;
+}
+
+$dt_first.focusin(function() {
+	$dt_first.datepicker();
+	
+	if( $dt_last.val().length > 0 ) {
+		$dt_last.val("");
+	}
+});
+
+$dt_last.focusin(function() {
+	if( $dt_first.val().length > 0 ) {
+	
+		$dt_last.datepicker("destroy");
+		$dt_last.datepicker({
+			minDate : parseDate( $dt_first.val() ),
+			maxDate : parseDate( $dt_first.val(), "+7" )
+		});
+	} else {
+	
+		alert("시작일부터 설정해야 합니다.");
+		$dt_first.focus();
+	}
+});
+</script>
+</body>
+</html>

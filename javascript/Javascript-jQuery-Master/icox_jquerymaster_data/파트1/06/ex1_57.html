@@ -1,0 +1,29 @@
+<!DOCTYPE HTML>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>가위 바위 보 게임</title>
+	<script>
+		function gaibaibo(userName,gbb){            
+			var com_random = ["가위","바위","보"];
+			var victory = ["이겼음","졌음","비겼음"];            
+			var computer = Math.floor(Math.random()*3);            
+			if(gbb == "가위" && computer == 2 || gbb == "바위" && computer == 0 || gbb == "보" && computer == 1){
+				win(0);
+			}else if(gbb == "가위" && computer == 1 || gbb == "바위" && computer == 2 || gbb == "보" && computer == 0){
+				win(1);
+			}else{
+				win(2);
+			}
+			function win(n){				
+				var result = userName + " : " + gbb + ", computer : " + com_random[computer];
+				result += "<br> 결과 : " + userName + "이(가) " + victory[n];
+				document.write(result);
+			}			
+		}
+		gaibaibo(prompt("이름입력",""),prompt("가위,바위,보에서 하나를 입력하세요!",""));
+	</script>
+</head>
+<body>    
+</body>
+</html> 

@@ -1,0 +1,25 @@
+<!DOCTYPE HTML>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<title>object 객체</title>
+<script>
+	var str = "string";
+	var num = 10;
+	document.write(str.constructor + "<br>");
+	document.write(num.constructor + "<br>");
+	if(str.constructor == String){
+		document.write("문자" + "<br>");
+	}	
+	document.write(str.hasOwnProperty("length") + "<br>");
+	var subject1 = {sub:"Javascipt"};
+	document.write(subject1.propertyIsEnumerable("sub") + "<br>");
+	var subject2 = ["Javascipt","jQuery"];
+    document.write(Array.prototype.isPrototypeOf(subject2) + "<br>");
+	document.write(subject2.toString() +  "<br>");
+	document.write(typeof num.valueOf() +  "<br>");
+</script>
+</head>
+<body>	
+</body>
+</html>

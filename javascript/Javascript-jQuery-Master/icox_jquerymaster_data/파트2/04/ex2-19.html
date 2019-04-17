@@ -1,0 +1,79 @@
+﻿<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<title>DOM manipulation value method</title>
+<script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+</head>
+<body>
+
+<!-- 실습 영역 -->
+	<!-- 1. html
+	<div id="test">html 메서드 테스트</div> -->
+	
+	<!-- 2. text
+	<div id="test">text 메서드 테스트</div> -->
+	
+	<!-- 3. val
+	<input type="text" value="val 메서드 테스트"> -->
+
+	
+	<div id="result" style="display:none; margin-top:100px">
+	<!-- Result : Text -->
+	<div class="text" style="display:none">
+		<p><strong>* TEXT 결과 값</strong></p>
+		<p class="description" style="background:#eee"></p>
+	</div>
+</div>
+<script>
+
+// 결과 확인이 필요한 부분만 마크업 코드와 순서를 맞춰 해당 주석을 풀어주세요.
+
+// Result : Text
+function resultText( target ) {
+	var	$result = $("#result");
+	
+		$result
+			.show()
+			.find(".text")
+			.show();
+		
+	if( !target ) {
+		$result
+			.find(".text .description")
+			.text("값 없음.");
+	if( target.length != 0 ) {
+		$result
+			.find(".text .description")
+			.text( target );
+		}
+	} else {
+		$result
+			.find(".text .description")
+			.text( target );
+	}
+}
+
+
+// 1-1. html : gettter
+//resultText( $("#test").html() );
+
+// 1-2. html : setter
+//$("#test").html("html 메서드 테스트 : 수정");
+
+// 2-1. text : getter
+//resultText( $("#test").text() );
+
+// 2-2. text : setter
+//$("#test").text("text 메서드 테스트 : 수정");
+
+// 3-1. val : getter
+//resultText( $("input").val() );
+
+// 3-2. val : setter
+//$("input").val("val 메서드 테스트 : 수정");
+
+</script>
+<!-- //실습 영역 -->
+</body>
+</html>

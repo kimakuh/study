@@ -1,0 +1,21 @@
+﻿<!DOCTYPE HTML>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<title>프로토타입</title>
+<script>
+	var Circle = function(c, d){
+		this.color = c;	
+		this.diameter = d;
+	}
+	Circle.prototype.radius = function(n){
+		var r = n/2;
+		return r;
+	}
+	var green_circle = new Circle("green", 200);
+	document.write(green_circle.radius(200));
+</script>
+</head>
+<body>	
+</body>
+</html>

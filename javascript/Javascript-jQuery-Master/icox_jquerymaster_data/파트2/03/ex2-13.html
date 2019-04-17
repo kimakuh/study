@@ -1,0 +1,87 @@
+﻿<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<title>Filter Selectors</title>
+<script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+</head>
+<body>
+
+<!-- 실습 영역 -->
+	<h1>Filter Selector Examples</h1>
+	<h2 style="display:none">숨겨진 H2 태그</h2>
+	<ul>
+		<li>LI 태그, #1</li>
+		<li>LI 태그, #2</li>
+		<li><strong>LI 태그, #3</strong></li>
+		<li><strong>LI 태그, #4</strong></li>
+		<li>LI 태그, #5</li>
+		<li>LI 태그, #6</li>
+	</ul>
+	<div style="position:absolute; top:250px; left:0; width:50px; height:50px"></div>
+	
+<script>
+
+// 결과 확인이 필요한 부분만 해당 주석을 풀어주세요.
+
+function resultSelector( selector, lineColor ) {
+	if( !lineColor ) lineColor = 'red';
+	selector.css({ outline:'3px solid ' + lineColor });
+}
+
+	// 1. :eq
+	//resultSelector( $("li:eq(0)") );
+	//resultSelector( $("li:eq(-1)"), "blue" );
+
+	// 2. :gt
+	//resultSelector( $("li:gt(2)") );
+	//resultSelector( $("li:gt(-2)") );
+	
+	// 3. :lt
+	//resultSelector( $("li:lt(2)") );
+	//resultSelector( $("li:lt(-2)") );
+	
+	// 4. :fitst
+	//resultSelector( $("li:first") );
+	
+	// 5. :last
+	//resultSelector( $("li:last") );
+		
+	// 6. :even, 짝수
+	//resultSelector( $("li:even") );
+	
+	// 7. :odd, 홀수
+	//resultSelector( $("li:odd") );
+	
+	// 8. :header
+	//resultSelector( $(":header") );
+	
+	// 9. :parent
+	//resultSelector( $("ul:parent") );
+	
+	// 10. :has
+	//resultSelector( $("li:has(strong)") );
+	
+	// 11. :contains
+	//resultSelector( $("li:contains(#)") );
+	//resultSelector( $("li:contains(5)") );
+
+	// 12. :visible
+	//resultSelector( $("strong:visible") );
+	
+	// 13. :hidden
+	//resultSelector( $(":header:hidden").show() );
+	
+	// 14. :animated
+	//setInterval(function() {
+	//	if( $("div").offset().left <= 3 ) {
+	//		$("div").animate({ left : $(window).width() - 53 });
+	//	} else {
+	//		$("div").animate({ left : 3 });
+	//	}
+	//	resultSelector( $(":animated") );
+	//}, 2500);
+</script>
+<!-- //실습 영역 -->
+</body>
+</html>

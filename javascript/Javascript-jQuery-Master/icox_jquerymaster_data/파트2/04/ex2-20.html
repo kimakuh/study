@@ -1,0 +1,111 @@
+﻿<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<title>DOM manipulation demension method</title>
+<script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+<style>
+#test {
+	display : inline-block;
+	margin : 10px;
+	background : #000
+}
+
+#box {
+	position : relative;
+	margin : 40px;
+	border : 30px solid red;
+	padding : 10px;
+	width : 260px;
+	height : 200px;
+	outline : 1px solid;
+	background : orange
+}
+
+#box > div {
+	position : absolute;
+	top : 20px;
+	left : 20px;
+	width : 240px;
+	height : 180px;
+	background : yellow
+}
+</style>
+</head>
+<body>
+
+
+<!-- 실습 영역 -->
+	<!-- 1 ~ 4. innerWidth, innerHeight, outerWidth, outerHeight -->
+	<ul style="margin:10px">
+		<li>Margin : 40px, 배경색 : 검정</li>
+		<li>Border : 30px, 배경색 : 빨강</li>
+		<li>Padding : 10px, 배경색 : 주황</li>
+		<li>Width : 260px, 배경색 : 노랑</li>
+		<li>Height : 200px</li>
+	</ul>
+	
+	<div id="test">
+		<div id="box">
+			<div></div>
+		</div>
+	</div>
+	
+<div id="result" style="display:none; margin-top:100px">
+	<!-- Result : Text -->
+	<div class="text" style="display:none">
+		<p><strong>* TEXT 결과 값</strong></p>
+		<p class="description" style="background:#eee"></p>
+	</div>
+</div>
+<script>
+
+// 결과 확인이 필요한 부분만 해당 주석을 풀어주세요.
+
+// Result : Text
+function resultText( target ) {
+	var $result = $("#result");
+	
+		$result
+			.show()
+			.find(".text")
+			.show();
+		
+	if( !target ) {
+		$result
+			.find(".text .description")
+			.text("값 없음.");
+	if( target.length != 0 ) {
+		$result
+			.find(".text .description")
+			.text( target );
+		}
+	} else {
+		$result
+			.find(".text .description")
+			.text( target );
+	}
+}
+
+
+// 1. innerWidth
+//resultText( $('#box').innerWidth() );
+
+// 2. innerHeight
+//resultText( $('#box').innerHeight() );
+
+// 3-1. outerWidth
+//resultText( $('#box').outerWidth() );
+
+// 3-2. outerWidth(true)
+//resultText( $('#box').outerWidth(true) );
+
+// 4-1. outerHeight
+//resultText( $('#box').outerHeight() );
+
+// 4-2. outerHeight(true)
+//resultText( $('#box').outerHeight(true) );
+</script>
+<!-- //실습 영역 -->
+</body>
+</html>

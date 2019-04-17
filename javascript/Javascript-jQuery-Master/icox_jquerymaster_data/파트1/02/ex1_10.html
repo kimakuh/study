@@ -1,0 +1,64 @@
+﻿<!DOCTYPE HTML>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<title>변수 데이터형</title>	
+	<script>
+		//string
+		document.write("<strong>string 데이터</strong>" + "<br>");
+		var str1 = "Javascript";
+		var str2 = "'Javascript'";
+		document.write(str1 + "<br>");
+		document.write(str2 + "<br>");
+
+		//number
+		document.write("<strong>number 데이터</strong>" + '<br>');
+		var num1 = 10;
+		var num2 = 10.5;
+		document.write(num1 + "<br>");
+		document.write(num2 + "<br>");
+		
+		//Boolean
+		document.write("<strong>Boolean 데이터</strong>" + '<br>');
+		var temp1 = true;
+		var temp2 = false;
+		document.write(temp1 + "<br>");
+		document.write(temp2 + "<br>");
+		var temp3 = 0;	
+		var temp4 = 1;		
+		document.write(Boolean(temp3) + "<br>");
+		document.write(Boolean(temp4) + "<br>");
+
+		//Array
+		document.write("<strong>Array 데이터</strong>" + "<br>");
+		var ary = ["html","javascript","jQuery"];
+		document.write(ary[0] + "<br>");
+		document.write(ary[1] + "<br>");
+		document.write(ary[2] + "<br>");
+
+		//Object
+		document.write("<strong>Object 데이터</strong>" + "<br>");
+		var exam = {subject:"css",score:20};
+		document.write(exam.subject + "<br>");
+		document.write(exam.score + "<br>");
+
+		//function
+		document.write("<strong>function 데이터</strong>" + "<br>");
+		var unitChange = function(num){
+		  var trans = num/100;
+		  document.write(num + "cm는 " + trans + "m입니다." + "<br>");
+		};
+		unitChange(100);
+
+		//undefined, null
+		document.write("<strong>undefined, null 데이터</strong>" + "<br>");
+		var obj1;
+		document.write(obj1 + "<br>");
+		var obj2 = 10;
+		obj2 = null;
+		document.write(obj2 + "<br>");
+		document.write(Boolean(obj1) + "<br>");
+		document.write(Boolean(obj2));
+	</script>
+</head>
+<body>

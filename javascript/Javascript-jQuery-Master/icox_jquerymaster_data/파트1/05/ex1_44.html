@@ -1,0 +1,23 @@
+<!DOCTYPE HTML>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<title>내장 함수</title>
+	<script>		
+		var str = "icoxpublish10*-/+@_.자바스크립트";
+		var encodeStr = escape(str);
+		var uri1 = "http://icoxpublish.com/search?자바스크립트!(),-_*~+/.?:@&=$#";
+		var encodeUri1 = encodeURI(uri1);
+		var uri2 = "http://icoxpublish10.com/search?자바스크립트!()-_*~";
+		var encodeUri2 = encodeURIComponent(uri2);
+		document.write(encodeStr + "<br>");
+		document.write(unescape(encodeStr) + "<br>");
+		document.write(encodeUri1 + "<br>");
+		document.write(decodeURI(encodeUri1) + "<br>");
+		document.write(encodeUri2 + "<br>");		
+		document.write(decodeURIComponent(encodeUri2));
+	</script>
+</head>
+<body>	
+</body>
+</html>

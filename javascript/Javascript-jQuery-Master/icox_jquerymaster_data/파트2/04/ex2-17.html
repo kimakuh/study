@@ -1,0 +1,103 @@
+﻿<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<title>DOM manipulation setter method</title>
+<script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+<style>
+#outer {
+	display : inline-block;
+	position : relative;
+	width : 200px;
+	height : 100px;
+	background : #eee
+}
+
+#inner {
+	position : absolute;
+	top : 30px;
+	left : 30px;
+	width : 100%;
+	height : 100%;
+	background : #000
+}
+
+#long {
+	width : 1px;
+	height: 3000px;
+	background : #000
+}
+
+#wide {
+	width : 3000px;
+	height: 1px;
+	background : #000
+}
+</style>
+</head>
+<body>	
+
+<!-- 실습 영역 -->	
+	<!-- 1. attr_setter
+	<div id="test" class="클래스_최초">DIV, id="test" class="클래스_최초"</div> -->
+	
+	<!-- 2. attr_setter + prop_setter
+	<input type="radio"> -->
+	
+	<!-- 3. css_setter
+	<div id="test" style="border:1px solid">DIV, id="test"</div> -->
+	
+	<!-- 4. width_setter
+	<div id="test" style="border:1px solid">DIV, id="test"</div> -->
+	
+	<!-- 5. height_setter
+	<div id="test" style="border:1px solid">DIV, id="test"</div> -->
+	
+	<!-- 6. offset_setter
+	<div id="outer">
+		<div id="inner"></div>
+	</div> -->
+	
+	<!-- 7. scrollTop_setter
+	<button style="position:fixed; top:20px; left:20px">scrollTop 테스트</button>
+	<div id="long"></div> -->
+	
+	<!-- 8. scrollLeft_setter
+	<button style="position:fixed; top:20px; left:20px">scrollLeft 테스트</button>
+	<div id="wide"></div> -->
+
+<script>
+
+// 결과 확인이 필요한 부분만 마크업 코드와 순서를 맞춰 해당 주석을 풀어주세요.
+
+// 1. attr_setter
+//$("#test").attr("class", "클래스_수정");
+
+// 2. prop_setter
+//$("input").prop({ "checked" : "checked" });
+
+// 3. css_setter
+//$("#test").css("width", 500);
+	
+// 4. width_setter
+//$("#test").width("500px");
+
+// 5. height_setter
+///$("#test").height(500);
+
+// 6. offset_setter
+//$("#outer").offset({ top : 50, left : 50 });
+
+// 7. scrollTop_setter
+//setTimeout(function() {
+//	$(document).scrollTop(300);
+//}, 0);
+
+// 8. scrollLeft_setter
+//setTimeout(function() {
+//	$(document).scrollLeft(300);
+//}, 0);
+</script>
+<!-- //실습 영역 -->
+</body>
+</html>

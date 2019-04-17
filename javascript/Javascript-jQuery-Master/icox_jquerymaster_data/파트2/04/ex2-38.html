@@ -1,0 +1,90 @@
+﻿<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<title>Animation basic method</title>
+<script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+<style>
+#box {
+	position:absolute;
+	top:50px;
+	left:0;
+	width:50px;
+	height:50px;
+	background:#000
+}
+</style>
+</head>
+<body>
+
+<!-- 실습 영역 -->
+	<!-- 1 ~ 3, animate, stop, delay -->
+	<button type="button">애니메이션 테스트</button>
+	<div id="box"></div>
+	
+<script>
+
+// 결과 확인이 필요한 부분만 해당 주석을 풀어주세요.
+
+// 1. animate
+//$("button").click(function() {
+//	if( !$("button").hasClass("action") ) {
+//		$("#box").animate({ left : $(window).width() - 50 });
+//		$("button").addClass("action");
+//	} else {
+//		$("#box").animate({ left : 0 });
+//		$("button").removeClass("action");
+//	}
+//});
+
+// 2-1. stop_no arguments
+//$("button").click(function() {
+//	if( !$("button").hasClass("action") ) {
+//		$("#box")
+//			.stop()
+//			.animate({ left : $(window).width() - 50 });
+//		$("button").addClass("action");
+//	} else {
+//		$("#box")
+//			.stop()
+//			.animate({ left : 0 });
+//		$("button").removeClass("action");
+//	}
+//});
+
+
+// 2-2. stop_arguments : IF) jumpToEnd is true
+//$("button").click(function() {
+//	if( !$("button").hasClass("action") ) {
+//		$("#box")
+//			.stop(false, true)
+//			.animate({ left : $(window).width() - 50 });
+//		$("button").addClass("action");
+//	} else {
+//		$("#box")
+//			.stop(false, true)
+//			.animate({ left : 0 });
+//		$("button").removeClass("action");
+//	}
+//});
+
+// 3. delay
+//$("button").click(function() {
+//	if( !$("button").hasClass("action") ) {
+//		$("#box")
+//			.animate({ left : $(window).width() - 50 })
+//			.delay(2000)
+//			.animate({ left : 0 });
+//		$("button").addClass("action");
+//	} else {
+//		$("#box")
+//			.animate({ left : 0 })
+//			.delay(2000)
+//			.animate({ left : $(window).width() - 50 });
+//		$("button").removeClass("action");
+//	}
+//});
+</script>
+<!-- //실습 영역 -->
+</body>
+</html>

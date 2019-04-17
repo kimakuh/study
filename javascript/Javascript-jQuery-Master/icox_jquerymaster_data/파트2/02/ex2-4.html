@@ -1,0 +1,46 @@
+﻿<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<title>결과값표시기능 - Text</title>
+<script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+</head>
+<body class="클래스 결과값을 표시합니다.">
+
+<div id="result" style="display:none; margin-top:100px">
+	<div class="text" style="display:none">
+		<p><strong>* TEXT 결과 값</strong></p>
+		<p class="description" style="background:#eee"></p>
+	</div>
+</div>
+<script>
+// 함수 선언 : resultText
+function resultText( target ) {
+	var $result = $("#result");
+	
+	$result
+		.show()
+		.find(".text")
+		.show();
+		
+	if( !target ) {
+		$result
+			.find(".text .description")
+			.text("값 없음.");
+		if( target.length != 0 ) {
+			$result
+				.find(".text .description")
+				.text( target );
+		}
+	} else {
+		$result
+			.find(".text .description")
+			.text( target );
+	}
+}
+
+// 함수 실행 : resultText
+resultText( $("body").attr("class") );
+</script>
+</body>
+</html>

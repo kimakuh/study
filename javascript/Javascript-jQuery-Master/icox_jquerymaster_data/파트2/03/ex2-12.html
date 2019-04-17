@@ -1,0 +1,74 @@
+﻿<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<title>Form Selectors</title>
+<script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+</head>
+<body>
+
+<!-- 실습 영역 -->
+	<input type="text" value="INPUT 태그, :text">
+	<input type="text" value="INPUT 태그, :disabled" disabled>
+	<input type="password" value="INPUT 태그, :password">
+	<input type="image" src="image.jpg">
+	<input type="file">
+	<input type="checkbox">
+	<input type="checkbox" checked>
+	<input type="radio">
+	<input type="radio" checked>
+	<select>
+		<option>SELECT 태그, 가</option>
+		<option>SELECT 태그, 나</option>
+	</select>
+	<input type="button" value="INPUT 태그, :button">
+	<button type="reset">BUTTON 태그, :reset</button>
+	<button type="submit">BUTTON 태그, :submit</button>
+	
+<script>
+
+// 결과 확인이 필요한 부분만 해당 주석을 풀어주세요.
+
+function resultSelector( selector, lineColor ) {
+	if( !lineColor ) lineColor = 'red';
+	selector.css({ outline:'3px solid ' + lineColor });
+}
+
+	// 1. :input
+	//resultSelector( $(":input") );
+	
+	// 2. :text
+	//resultSelector( $(":text") );
+	
+	// 3. :password
+	//resultSelector( $(":password") );
+		
+	// 4. :image
+	//resultSelector( $(":image") );
+	
+	// 5. :file
+	//resultSelector( $(":file") );
+
+	// 6. :checkbox
+	//resultSelector( $(":checkbox") );
+	
+	// 7. :radio
+	//resultSelector( $(":radio") );
+	
+	// 8. :selected
+	//if( $(":selected") ) {
+	//resultSelector( $("select") );
+	//}
+
+	// 9. :button
+	//resultSelector( $(":button") );
+	
+	// 10. :reset
+	//resultSelector( $(":reset") );
+	
+	// 11. :submit
+	//resultSelector( $(":submit") );
+</script>
+<!-- //실습 영역 -->
+</body>
+</html>

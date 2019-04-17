@@ -1,0 +1,33 @@
+<!DOCTYPE HTML>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<title>이벤트 강제 실행</title>	
+	<style>
+		*{margin:0;padding:0;}
+		div{border:1px solid red;cursor:pointer;}
+		p{background:orange;}
+	</style>
+	<script>
+		window.onload = function(){
+			var bt = document.getElementById("bt");
+			var content = document.getElementById("content"); 
+			var check = false;
+			bt.onclick = function(){
+				if(!check){
+					content.style.display = "none";
+					check= true;
+				}else{
+					content.style.display = "block";
+					check = false;
+				}               
+			} 
+			bt.onclick();
+		}
+	</script>	
+</head>
+<body>
+	<div id="bt">클릭</div>
+    <p id="content">내용</p>
+</body>
+</html>

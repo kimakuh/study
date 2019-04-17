@@ -1,0 +1,29 @@
+<!DOCTYPE HTML>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<title>이벤트</title>
+	<style>
+		div{border:1px solid red;}
+	</style>	
+</head>
+<body>
+	<div id="bt">클릭</div>
+	<script>
+		var bt = document.getElementById("bt");
+		bt.onclick = function(){
+			alert("클릭했습니다.");
+		}
+
+		/*var bt = document.getElementById("bt");
+		function view(){
+			alert("클릭했습니다.");
+		}
+		bt.onclick = function(){
+			view();
+		}*/
+		//bt.onclick = view;
+
+	</script>
+</body>
+</html>

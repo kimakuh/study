@@ -1,0 +1,22 @@
+<!DOCTYPE HTML>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<title>객체</title>
+<script>
+	var circle = new Object();
+	circle.color = "red";
+	circle.diameter = 100;
+	circle.radius = function(){
+		var n = this.diameter/2;
+		return n;
+	}
+	document.write(circle.color + "/" + circle.diameter + "/" + circle.radius() + "<br>");
+	circle.color = "blue";
+	circle.diameter = 200;
+	document.write(circle.color + "/" + circle.diameter + "/" + circle.radius() + "<br>");
+</script>
+</head>
+<body>	
+</body>
+</html>

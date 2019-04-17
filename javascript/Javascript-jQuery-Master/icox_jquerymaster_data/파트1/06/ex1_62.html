@@ -1,0 +1,28 @@
+<!DOCTYPE HTML>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<title>생성자 함수</title>
+<script>	
+	var Circle = function(c, d){
+		this.color = c;
+		this.diameter = d;
+		this.radius = function(n){
+			var r = n/2;
+			return r;
+		}
+	}	
+	var red_circle = new Circle("red", 100);	
+	document.write(red_circle.color + "<br>");
+	document.write(red_circle.diameter + "<br>");
+	document.write(red_circle.radius(100) + "<br>");
+
+	var blue_circle = new Circle("blue", 200);
+	document.write(blue_circle.color + "<br>");
+	document.write(blue_circle.diameter + "<br>");
+	document.write(blue_circle.radius(200));
+</script>
+</head>
+<body>	
+</body>
+</html>

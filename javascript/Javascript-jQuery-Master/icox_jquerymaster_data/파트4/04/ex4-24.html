@@ -1,0 +1,58 @@
+﻿<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<title>final example</title>
+<link rel="stylesheet" href="dist/themes/default/style.css">
+<script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+<script src="dist/jstree.js"></script>
+</head>
+<body>
+
+	<div id="jstree">
+		<ul>
+			<li>
+				폴더1
+				<ul>
+					<li>폴더1-1</li>
+					<li>폴더1-2</li>
+				</ul>
+			</li>
+		</ul>
+	</div>
+	
+	<button id="copy">1_트리복사</button>
+	<button id="destroy">2_트리삭제</button>
+	<button id="paste">3_트리복원</button>
+
+<script>
+var $copy;
+
+function makeTree( data ) {
+	$("#jstree").jstree({
+		"core" : {
+			"check_callback" : true,
+			"data" : data
+		},
+		"plugins" : ["contextmenu", "dnd"]
+	});
+}
+makeTree();
+
+// 1. 트리 복사
+$("#copy").click(function() {
+	$copy = $("#jstree").jstree(true).get_json();
+});
+
+// 2. 트리 제거
+$("#destroy").click(function() {
+	$("#jstree").jstree(true).destroy();
+});
+
+// 3. 트리 복원
+$("#paste").click(function() {
+	makeTree( $copy );
+});
+</script>
+</body>
+</html>

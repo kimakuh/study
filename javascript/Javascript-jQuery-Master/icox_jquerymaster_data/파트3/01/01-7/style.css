@@ -1,0 +1,11 @@
+@charset "utf-8";
+
+*{margin:0;padding:0;}
+body{font-family:"돋움",dotum,sans-serif;font-size:16px;color:#000;}
+input{width:100%;height:40px;border:1px solid #999;line-height:40px;}
+#wrap{border:2px solid #ccc;padding:20px;}
+#wrap>p{text-align:right;color:#ff0000;}       
+#frm dl dd{margin-bottom:10px;}     
+#frm strong{color:#ff0000;}
+#frm div input{width:100%;height:50px;border:1px solid #999;background:#eee;}
+#frm .on{color:red;text-align:center;}

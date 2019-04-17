@@ -1,0 +1,76 @@
+﻿<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<title>DOM traversing basic Method</title>
+<script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+</head>
+<body>
+
+<!-- 실습 영역 -->
+	<div id="root_wrap" style="position:relative">
+		<div id="root">
+			<p id="first">P태그 : #1, id="first"</p>
+			<p>P태그 : #2</p>
+			<p id="target"><a href="#"><b>P태그 : #3, id="target"</b></a></p>
+			<p>P태그 : #4</p>
+			<p><b>P태그 : #5</b></p>
+			<p id="last">P태그 : #6, id="last"</p>
+		</div>
+	</div>
+
+	
+<script>
+
+// 결과 확인이 필요한 부분만 해당 주석을 풀어주세요.
+
+function resultSelector( selector, lineColor ) {
+	if( !lineColor ) lineColor = 'red';
+	selector.css({ outline:'3px solid ' + lineColor });
+}
+
+	// 1. .children()
+	//resultSelector( $("#root").children() );
+
+	// 2. .closest()
+	//resultSelector( $("#target").closest("div") );
+	
+	// 3. .find()
+	//resultSelector( $("#root").find("#target") );
+	
+	// 4. .next()
+	//resultSelector( $("#target").next() );
+	
+	// 5. .nextAll()
+	//resultSelector( $("#target").nextAll() );
+	
+	// 6. .nextUntil()
+	//resultSelector( $("#target").nextUntil("#last") );
+	
+	// 7. .offsetParent()
+	//resultSelector( $("#target").offsetParent() );
+	
+	// 8. .parent()
+	//resultSelector( $("#target").parent() );
+	
+	// 9. .parents()
+	//resultSelector( $("#target").parents() );
+	
+	// 10. .parentsUntil()
+	//resultSelector( $("#target").parentsUntil("#root_wrap") );
+	
+	// 11. .prev()
+	//resultSelector( $("#target").prev() );
+	
+	// 12. .prevAll()
+	//resultSelector( $("#target").prevAll() );
+	
+	// 13. .prevUntil()
+	//resultSelector( $("#target").prevUntil("#first") );
+	
+	// 14. .siblings()
+	//resultSelector( $("#target").siblings() );
+</script>
+<!-- //실습 영역 -->
+</body>
+</html>

@@ -1,0 +1,54 @@
+﻿<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<title>datejs compareTo</title>
+<script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+<script src="date.js"></script>
+</head>
+<body>
+	
+	<input type="text" id="date_first" value="11/15/2014">
+	<input type="text" id="date_last" value="11/10/2014">
+
+<div id="result" style="display:none; margin-top:100px">
+	<!-- Result : Text -->
+	<div class="text" style="display:none">
+		<p><strong>* TEXT 결과 값</strong></p>
+		<p class="description" style="background:#eee"></p>
+	</div>
+</div>		
+<script>
+// Result : Text
+function resultText( target ) {
+	var $result = $("#result");
+	
+	$result
+		.show()
+		.find(".text")
+		.show();
+		
+	if( !target ) {
+		$result
+			.find(".text .description")
+			.text("값 없음.");
+		if( target.length != 0 ) {
+			$result
+				.find(".text .description")
+				.text( target );
+		}
+	} else {
+		$result
+			.find(".text .description")
+			.text( target );
+	}
+}
+
+var first_date = Date.parseExact( $("#date_first").val(), "M/d/yyyy" );
+var last_date = Date.parseExact( $("#date_last").val(), "M/d/yyyy" );
+
+// 클때 : 1, 작을때 : -1, 같을때 : 0
+resultText( first_date.compareTo( last_date ) );
+</script>
+</body>
+</html>

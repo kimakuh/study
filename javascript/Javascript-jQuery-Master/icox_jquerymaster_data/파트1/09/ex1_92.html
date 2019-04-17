@@ -1,0 +1,23 @@
+<!DOCTYPE HTML>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<title>문서 객체를 직접 선택하는 메서드들</title>
+	<script>
+		window.onload = function(){
+			var result = "";			
+			var txt = document.getElementsByName("txt");		
+			result += txt.item(0).value + "\n";
+			result += txt.item(1).value + "\n";
+			//result += txt[0].value + "\n";
+			//result += txt[1].value + "\n";
+			result += txt.length;
+			alert(result);			
+		}
+	</script>
+</head>
+<body>
+	<input type="text" name="txt" value="자바스크립트" />
+	<input type="text" name="txt" value="제이쿼리" />	
+</body>
+</html>

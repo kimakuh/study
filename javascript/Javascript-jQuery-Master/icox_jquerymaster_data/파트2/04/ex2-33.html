@@ -1,0 +1,131 @@
+﻿<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<title>Event form method</title>
+<script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+</head>
+<body>
+
+<!-- 실습 영역 -->	
+	<form action="#" method="get">
+		<a href="javascript:;">링크</a>
+		<input type="text">
+		<button type="button" id="add_focus">포커싱 하기</button>
+		<button type="button" id="remove_focus">포커싱 빼기</button>
+		<textarea cols="20" rows="10"></textarea>
+		<select>
+			<option value="사과">사과</option>
+			<option value="배" selected>배</option>
+			<option value="멜론">멜론</option>
+		</select>
+		<button type="submit" id="submit">폼 전송</button>
+	</form>
+
+<div id="result" style="display:none; margin-top:100px">
+	<!-- Result : Text -->
+	<div class="text" style="display:none">
+		<p><strong>* TEXT 결과 값</strong></p>
+		<p class="description" style="background:#eee"></p>
+	</div>
+
+	<!-- Result : Value -->
+	<div class="value" style="display:none">
+		<p><strong>* Value 결과 값</strong></p>
+		<p class="description" style="background:#eee"></p>
+	</div>
+</div>
+<script>
+
+// 결과 확인이 필요한 부분만 해당 주석을 풀어주세요.
+
+function resultText( target ) {
+	var $result = $("#result");
+	
+	$result
+		.show()
+		.find(".text")
+		.show();
+		
+	if( !target ) {
+		$result
+			.find(".text .description")
+			.text("값 없음.");
+		if( target.length != 0 ) {
+			$result
+				.find(".text .description")
+				.text( target );
+		}
+	} else {
+		$result
+			.find(".text .description")
+			.text( target );
+	}
+}
+
+// Result : Value
+function resultValue( target ) {
+	var $result = $("#result");
+	
+	$result
+		.show()
+		.find(".value")
+		.show();
+		
+	if( !target ) {
+		$result
+			.find(".value .description")
+			.text("값 없음.");
+		if( target.length != 0 ) {
+			$result
+				.find(".value .description")
+				.text( target );
+		}
+	} else {
+		$result
+			.find(".value .description")
+			.text( target );
+	}
+}
+
+
+// 1-1. 강제 focus
+//$("#add_focus").click(function() {
+//	$("input").focus();
+//	resultText("포커스를 강제로 넣습니다.");
+//});
+
+// 1-2. focus
+//$("a, input, textarea, select").focus(function() {
+//	resultText("포커스가 표시되어 있습니다.");
+//});
+
+// 2-1. 강제 blur
+//$("#remove_focus").click(function() {
+//	$("input").blur();
+//	resultText("포커스를 강제로 빠지게 합니다.");
+//});
+
+// 2-2. blur
+//$("a, input, textarea, select").blur(function() {
+//	resultText("포커스가 빠져나갔습니다.");
+//});
+
+// 3. change
+//$("select").change(function() {
+//	resultValue( "바뀐 값 : " + $("select option:selected").val() );
+//});
+
+// 4. select
+//$("input, textarea").select(function() {
+//	resultText("텍스트가 선택(selected)되었습니다.");
+//});
+
+// 5. submit
+//$("#submit").click(function() {
+//	resultText("폼 내용을 전송했습니다.");
+//});
+</script>
+<!-- //실습 영역 -->
+</body>
+</html>

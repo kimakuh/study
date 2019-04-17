@@ -1,0 +1,25 @@
+<!DOCTYPE HTML>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<title>지역변수와 전역변수</title>
+	<script>
+		var num1 = 10;
+		function globalVar(){			
+			num1 += 50;
+			document.write(num1 + "<br>");
+		}
+		function localVar(){
+			var num2 = 20;
+			num2 += 50
+			document.write(num2 + "<br>");
+		}
+		globalVar();
+		localVar();
+		document.write(num1 + 50 + "<br>");
+		document.write(num2);
+	</script>
+</head>
+<body>	
+</body>
+</html>

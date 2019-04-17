@@ -1,0 +1,227 @@
+﻿<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<title>final example : select box</title>
+<script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+<style>
+body {
+	font-size:12px
+}
+
+ul {
+	padding:0; 
+	margin:0
+}
+
+a {
+	text-decoration:none; 
+	color:#000
+}
+
+select {
+	display:block; 
+	max-width:200px
+}
+
+.select {
+	width:195px;
+	padding-left:5px; 
+	position:relative; 
+	height:19px; 
+	background:url('bg_select.png') left top no-repeat
+}
+
+.select a {
+	cursor:default
+}
+
+.select .select_inner {
+	background:url('bg_select.png') right top no-repeat
+}
+
+.select .opt_tit a, .select .opts .tit a {
+	display:block; 
+	text-overflow:ellipsis; 
+	white-space:nowrap; 
+	overflow:hidden
+}
+
+.select .opt_tit a {
+	width:170px
+}
+
+.select .opts .tit a {
+	width:188px;
+	color:#999
+}
+
+.select .opts {
+	margin-left:-5px; 
+	width:198px; 
+	border:1px solid #7e7e7e
+}
+
+.select .opts a {
+	padding:0 5px
+}
+
+.select .option_result {
+	display:none
+}
+
+.option_list li a {
+	width:188px; 
+	display:block; 
+	text-overflow:ellipsis; 
+	white-space:nowrap; 
+	overflow:hidden
+}
+
+.option_list li.on a, .option_list li a:hover {
+	color:#fff; 
+	background:#1e90ff
+}
+</style>
+</head>
+<body>
+
+<!-- 1. 기본 셀렉트박스 -->
+<button type="button" id="select_value">시스템셀렉트박스:선택 값 확인</button>
+
+<select>
+	<option disabled selected>옵션선택</option>
+	<option>SB1</option>
+	<option>SB2</option>
+	<option>SB3</option>
+	<option>SB4</option>
+</select>
+
+<!-- 2. 이미지 셀렉트박스 -->
+<button type="button" id="img_select_value">이미지셀렉트박스:선택 값 확인</button>
+
+<div id="selectId" class="select">
+	<div class="select_inner">
+		<div class="opt_tit"><a href="#" title="옵션선택">옵션선택</a></div>
+		<div class="opts" style="display:none">
+			<div class="tit"><a href="#">옵션선택</a></div>
+			<ul class="option_list">
+				<li><a href="#">SB1</a></li>
+				<li><a href="#">SB2</a></li>
+				<li><a href="#">SB3</a></li>
+				<li><a href="#">SB4</a></li>
+			</ul>
+		</div>
+		<div class="option_result"></div>
+	</div>
+</div>
+
+	
+<div id="result" style="display:none; margin-top:100px">
+	<!-- Result : Text -->
+	<div class="text" style="display:none">
+		<p><strong>* TEXT 결과 값</strong></p>
+		<p class="description" style="background:#eee"></p>
+	</div>
+	
+	<!-- Result : Value -->
+	<div class="value" style="display:none">
+		<p><strong>* Value 결과 값</strong></p>
+		<p class="description" style="background:#eee"></p>
+	</div>
+</div>
+<script>
+// Result : Text
+function resultText( target ) {
+	var $result = $("#result");
+	
+	$result
+		.show()
+		.find(".text")
+		.show();
+		
+	if( !target ) {
+		$result
+			.find(".text .description")
+			.text("값 없음.");
+		if( target.length != 0 ) {
+			$result
+				.find(".text .description")
+				.text( target );
+		}
+	} else {
+		$result
+			.find(".text .description")
+			.text( target );
+	}
+}
+
+// Result : Value
+function resultValue( target ) {
+	var $result = $("#result");
+	
+	$result
+		.show()
+		.find(".value")
+		.show();
+		
+	if( !target ) {
+		$result
+			.find(".value .description")
+			.text("값 없음.");
+		if( target.length != 0 ) {
+			$result
+				.find(".value .description")
+				.text( target );
+		}
+	} else {
+		$result
+			.find(".value .description")
+			.text( target );
+	}
+}
+
+
+// 1. 기본 팝업
+$(".opt_tit").click(function() {
+	if( !$(this).hasClass("active") ) {
+		$(".opts").show();
+		$(this).addClass("active");
+	} else {
+		$(".opts").hide();
+		$(this).removeClass("active");
+	}
+
+	$(".option_list li").eq(selectedIndex).addClass("on");
+});
+
+// 2. 셀렉트박스 동작
+var selectedIndex;
+
+$(".option_list li")
+	.click(function() {
+		var value = $(this).find("a").text();
+		selectedIndex = $(this).index();
+		
+		$(".opt_tit a").text(value);
+		$(".option_result").text(value);
+		
+		$(".opts").hide();
+		$(".opt_tit").removeClass("active");
+	})
+	.mouseenter(function() {
+		$(".option_list li").removeClass("on");
+	});
+
+// 3-1. 기본 셀렉트박스 (선택한 값 확인)
+$("#select_value").click(function() {
+	resultValue( $("select option:selected").val() );
+});	
+
+// 3-2. 이미지 셀렉트박스 (선택한 값 확인)
+$("#img_select_value").click(function() {
+	resultText( $("#selectId .option_result").text() );
+});
+</script>
+</body>
+</html>

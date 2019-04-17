@@ -1,0 +1,35 @@
+<!DOCTYPE HTML>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<title>이벤트 객체</title>
+	<style>
+		div{border:1px solid red;cursor:pointer;}
+	</style>
+	<script>
+		window.onload = function(){
+			var bt = document.getElementById("bt");
+			var txt = document.getElementById("txt");
+			bt.onclick = function(event){
+				var str = "target : " + event.target + "\n";
+				str += "type : " + event.type + "\n";
+				str += "clientX : " + event.clientX + "\n";
+				str += "clientY : " + event.clientY + "\n";
+				str += "screenX : " + event.screenX + "\n";
+				str += "screenY : " + event.screenY + "\n";
+				str += "mouse : " + event.button + "\n";
+				alert(str);
+			}
+			txt.onkeydown = function(event){				
+				if(event.altKey){
+					alert("alt키를 눌렀습니다.");
+				}
+			}	
+		}
+	</script>		
+</head>
+<body>
+	<div id="bt">클릭</div>
+	<input type="text" id="txt" />
+</body>
+</html>

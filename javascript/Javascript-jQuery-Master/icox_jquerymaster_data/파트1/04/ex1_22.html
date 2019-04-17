@@ -1,0 +1,22 @@
+<!DOCTYPE HTML>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<title>if~else if~else문</title>
+	<script>
+		var id = prompt("ID입력","");
+		var pw = prompt("PW입력","");
+		if(id == "kim" && pw == 1234){
+			document.write("로그인 성공");
+		}else if(id != "kim" && pw == 1234){
+			document.write("아이디가 틀렸습니다.");
+		}else if(id == "kim" && pw != 1234){
+			document.write("비밀번호가 틀렸습니다.");			
+		}else{
+			document.write("아이디, 비밀번호 모두 틀렸습니다.");
+		}
+	</script>
+</head>
+<body>	
+</body>
+</html>

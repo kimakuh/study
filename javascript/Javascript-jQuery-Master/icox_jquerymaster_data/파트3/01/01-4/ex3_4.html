@@ -1,0 +1,53 @@
+<!DOCTYPE HTML>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<title>탭 만들기</title>
+    <link href="style.css" type="text/css" rel="stylesheet">
+	<script src="http://code.jquery.com/jquery-1.11.2.min.js"></script>
+    <script src="tab.js"></script>
+</head>
+<body>
+	<div id="wrap">
+		<h1>탭만들기</h1>
+		<ul class="tab" id="tab01"> 
+			<li><h2><a href="#"><img src="images/m1_out.gif" alt="공지사항" /></a></h2>
+				<div>
+					<ul>
+						<li><a href="#">공지내용</a><span>2015-01-04</span></li> 						 					
+					</ul>
+					<a href="#" class="more">더보기</a>
+				</div>
+			</li>
+			<li><h2><a href="#"><img src="images/m2_out.gif" alt="뉴스" /></a></h2>
+				<div>
+					<ul>
+						<li><a href="#">뉴스내용</a><span>2015-01-04</span></li>										
+					</ul>
+					<a href="#" class="more">더보기</a>
+				</div>
+			</li>
+			<script>tabs('tab01')</script>	
+		</ul>		
+		<ul class="tab" id="tab02"> 
+			<li><h2><a href="#"><img src="images/m3_out.gif" alt="자료실" /></a></h2>
+				<div>
+					<ul>
+						<li><a href="#">자료실</a><span>2015-01-04</span></li> 						 					
+					</ul>
+					<a href="#" class="more">더보기</a>
+				</div>
+			</li>
+			<li><h2><a href="#"><img src="images/m4_out.gif" alt="보도자료" /></a></h2>
+				<div>
+					<ul>
+						<li><a href="#">보도자료</a><span>2015-01-04</span></li>										
+					</ul>
+					<a href="#" class="more">더보기</a>
+				</div>
+			</li>
+			<script>tabs('tab02')</script>	
+		</ul>		
+	</div>
+</body>
+</html>

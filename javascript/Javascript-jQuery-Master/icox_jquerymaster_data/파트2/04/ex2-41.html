@@ -1,0 +1,91 @@
+﻿<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<title>Etcetera noconflict Method</title>
+<script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+</head>
+<body>
+
+<!-- 실습 영역 -->
+	<!-- jquery load : 4번 실습일 경우 주석을 풀어주세요.
+	<script src="http://code.jquery.com/jquery-1.6.1.min.js"></script>
+	<script src="http://code.jquery.com/jquery-1.10.1.min.js"></script> -->
+	
+
+<div id="result" style="display:none; margin-top:100px">
+	<div class="text" style="display:none">
+		<p><strong>* TEXT 결과 값</strong></p>
+		<p class="description"></p>
+	</div>
+</div>
+<script>
+
+// 결과 확인이 필요한 부분만 해당 주석을 풀어주세요.
+
+function resultText( target ) {
+	var $result = $("#result");
+	
+	$result
+		.show()
+		.find(".text")
+		.show();
+	if( !target ) {
+		$result.find(".description").text("값 없음.");
+		if( target == 0 || target == '0' ) {
+			if( target.length != 0 ) {
+				$result.find(".description").text( target );
+			} else {
+				$result.find(".description").text("값 없음.");
+			}
+		}
+	} else {
+		$result.find(".description").text( target );
+	}
+}
+
+
+// 1. no-option, jQuery변수명으로 함수 할당 가능. + 내부에서 $변수로 할당 가능. 외부는 jQuery 변수명으로 사용함.
+//$.noConflict();
+//
+//jQuery(function( jq ) {
+//	resultText("jQuery 버전 : " + jq.fn.jquery);
+//});
+
+// 2. no-option + random variable, 임의의 변수명으로 할당 가능.
+//var randomVariable = $.noConflict();
+//
+//randomVariable(function( jq ) {
+//	resultText("jQuery 버전 : " + jq.fn.jquery);
+//});
+
+// 3. option, 전역변수의 프로퍼티로 저장된 jQuery 변수명도 할당하지 않음.
+// 에러 발생 : Uncaught TypeError: Cannot read property 'noConflict' of undefined 
+//$.noConflict(true);
+//
+//if( !jQuery ) {
+//	alert("jQuery가 전역 변수로 존재하지 않습니다.");
+//}
+//
+//var jq = $.noConflict(true);
+//
+//if( jq ) {
+//	alert("전역 변수 'jq'로 선언했습니다.");
+//}
+
+
+// 4. option + random variable, 가장 최근에 로딩된 제이쿼리 파일부터 적용되고, 임의의 변수명을으로 할당 가능.
+//var jq61 = $.noConflict(true);
+//var jq101 = $.noConflict(true);
+//
+//jq61(function( jq ) {
+//	alert("jQuery 버전 : " + jq.fn.jquery);
+//});
+//
+//jq101(function( jq ) {
+//	alert("jQuery 버전 : " + jq.fn.jquery);
+//});
+</script>
+<!-- //실습 영역 -->
+</body>
+</html>

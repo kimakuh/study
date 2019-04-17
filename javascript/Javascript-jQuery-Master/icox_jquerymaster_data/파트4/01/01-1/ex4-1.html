@@ -1,0 +1,49 @@
+﻿<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, user-scalable=no">
+<title>owlcarousel start</title>
+<link rel="stylesheet" href="owl-carousel/owl.carousel.css">
+<link rel="stylesheet" href="owl-carousel/owl.theme.css">
+<script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+<script src="owl-carousel/owl.carousel.js"></script>
+<style>
+html, body, 
+.owl-carousel, .owl-wrapper-outer, .owl-wrapper, 
+.owl-item, .owl-item > div, .owl-item > div > div {
+	height:97%
+}
+
+.item > div { font-size:10em }
+
+.red { background : red }
+.orange { background : orange }
+.yellow { background : yellow }
+.green { background : green }
+</style>
+</head>
+<body>
+
+	<div id="owl-example" class="owl-carousel">
+		<div class="item">
+			<div class="red">1</div>
+		</div>
+		<div class="item">
+			<div class="orange">2</div>
+		</div>
+		<div class="item">
+			<div class="yellow">3</div>
+		</div>
+		<div class="item">
+			<div class="green">4</div>
+		</div>
+	</div>
+
+<script>
+$("#owl-example").owlCarousel({
+	singleItem : true
+});
+</script>
+</body>
+</html>

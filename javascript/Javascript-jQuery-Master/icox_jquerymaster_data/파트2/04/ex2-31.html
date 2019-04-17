@@ -1,0 +1,60 @@
+﻿<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<title>Event browser method</title>
+<script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+</head>
+<body>
+
+<!-- 실습 영역 -->	
+	<!-- 2. scroll -->
+	<div style="display:block; width:0px; height:2000px"></div>
+
+<div id="result" style="display:none; margin-top:100px">
+	<div class="text" style="display:none">
+		<p><strong>* TEXT 결과 값</strong></p>
+		<p class="description"></p>
+	</div>
+</div>
+<script>
+function resultText( target ) {
+	var $result = $("#result");
+	
+	$result
+		.show()
+		.find(".text")
+		.show();
+		
+	if( !target ) {
+		$result
+			.find(".text .description")
+			.text("값 없음.");
+		if( target.length != 0 ) {
+			$result
+				.find(".text .description")
+				.text( target );
+		}
+	} else {
+		$result
+			.find(".text .description")
+			.text( target );
+	}
+}
+
+
+// 1. resize
+$(window).resize(function() {
+	var width = $(window).width();
+	var height = $(window).height();
+	resultText('width:' + width + ', height:' + height);
+});
+
+// 2. scroll
+$(document).scroll(function() {
+	resultText('scroll 높이값:' + $(document).scrollTop());
+});
+</script>
+<!-- //실습 영역 -->
+</body>
+</html>

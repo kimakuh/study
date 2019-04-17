@@ -1,0 +1,26 @@
+<!DOCTYPE HTML>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<title>객체</title>
+	<script>
+		var str = ""
+		var circle = {
+			color  : "red",
+			diameter : 100,
+			radius : function(){
+				var n = this.diameter/2;
+				return n;
+			}
+		}	
+		circle.color = "blue";
+		circle.diameter = 200;
+		str += "원의 컬러 : " + circle.color;
+		str += ", 지름 : " + circle.diameter;
+		str += ", 반지름 : " + circle.radius();
+		document.write(str);
+	</script>
+</head>
+<body>	
+</body>
+</html>

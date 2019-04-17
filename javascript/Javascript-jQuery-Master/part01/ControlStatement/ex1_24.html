@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>switch ~ case문</title>
+    <script>
+        var subject = prompt("html, css, javascript, jquery 중 입력");
+        switch(subject) {
+            case "html" :
+            subject +="는 1학점입니다";
+            break;
+            case "css" :
+            subject +="는1학점입니다.";
+            break;
+            case "javascript" :
+            subject +="는2학점입니다.";
+            break;
+            case "jquery" :
+            subject +="는2학점입니다.";
+            break;
+            default:
+            subject = "해당 과목이 없습니다.";
+            }
+            document.write(subject);
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

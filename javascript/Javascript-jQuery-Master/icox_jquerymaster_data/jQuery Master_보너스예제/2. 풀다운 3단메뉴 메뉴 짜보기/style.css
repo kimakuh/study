@@ -1,0 +1,20 @@
+@charset "utf-8";
+
+*{margin:0;padding:0;}
+body{font-family:"돋움",dotum,sans-serif;font-size:12px;color:#000;line-height:100%;}
+img{border:0;vertical-align:top;}
+li{list-style:none;}
+a{color:#000;text-decoration:none;}
+#wrap{width:600px;margin:0 auto;}
+#header{padding-top:20px;z-index:100;}
+#header>#gnb{height:20px;}
+#header>#gnb>li{width:120px;float:left;text-align:center;position:relative;}
+#header>#gnb>li>ul{width:108px;position:absolute;left:0;top:30px;border:1px solid #ccc;background:#fff;padding:5px;display:none;}
+#header #gnb li ul.on{display:block;}
+#header #gnb li ul li a{display:block;border-bottom:1px solid #eee;padding:8px;}
+#header #gnb li ul li a:hover,#header #gnb li ul li a:active,#header #gnb li ul li a:focus{color:#fff;background:#ff0000;position:relative;}
+#header #gnb li ul li a span{position:absolute;right:10%;top:30%;font-size:11px;}
+#header>#gnb>li>ul>li{position:relative;}
+#header>#gnb>li>ul>li>ul{width:108px;position:absolute;right:-120px;top:0;border:1px solid #ccc;background:#fff;padding:5px;display:none;}
+#header .close{position:absolute;left:-99999%;}
+#content{background:#eee;text-align:center;height:160px;line-height:160px;}

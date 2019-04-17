@@ -1,0 +1,29 @@
+﻿<!DOCTYPE HTML>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>form 객체 선택</title>
+    <script>
+        function check1(){              
+            var idValue = document.forms[0].elements[0].value;
+            //var idValue1 = document.forms[0][0].value;                      
+            alert(idValue);                       
+            return false;
+        }
+		function check2(){           
+            var idValue = document.forms["fm2"].elements["query"].value;
+            //var idValue2 = document.forms["fm2"]["query"].value;            
+            alert(idValue);                       
+            return false;
+        }
+    </script>
+</head>
+<body>
+    <form action="#" name="fm1" onsubmit="return check1()">
+        <input type="text" name="subject" title="과목 입력" /><input type="submit" value="전송" />
+    </form>
+    <form action="#" name="fm2" onsubmit="return check2()">
+        <input type="text" name="query" title="검색어 입력" /><input type="submit" value="전송" />
+    </form>    
+</body>
+</html> 

@@ -1,0 +1,59 @@
+﻿<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<title>결과값표시기능 - Html</title>
+<script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+</head>
+<body>
+
+	<ul>
+		<li>1</li>
+		<li>2</li>
+		<li>3</li>
+	</ul>
+
+<div id="result" style="display:none; margin-top:100px">
+	<div class="html" style="display:none">
+		<p><strong>* HTML 결과 값</strong></p>
+		<p class="description" style="background:#eee"></p>
+	</div>
+	<div class="result_html" style="display:none"></div>
+</div>
+<script>
+// 함수 선언 : resultHtml
+function resultHtml( target ) {
+	var $result = $("#result");
+
+	$result
+		.show()
+		.find(".html")
+		.show();
+		
+	if( !target ) {
+		$result
+			.find(".html .description")
+			.text("값 없음.");
+	} else {
+		if( target.length != 0 ) {
+			$result
+				.find(".html .description")
+				.empty()
+				.text( 
+					$(".result_html")
+						.append( $(target).clone() )
+						.html()
+				);
+		} else {
+			$result
+				.find(".html .description")
+				.text("값 없음.");
+		}
+	}
+}
+
+// 함수 실행 : resultHtml
+resultHtml( $("ul") );
+</script>
+</body>
+</html>

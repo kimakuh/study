@@ -1,0 +1,163 @@
+﻿<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<title>DOM manipulation remove method</title>
+<script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+<style>
+#outer {
+	display : inline-block;
+	position : relative;
+	top : 30px;
+	left : 30px;
+	width : 200px;
+	height : 100px;
+	background : #eee
+}
+
+#inner {
+	position : absolute;
+	top : 20px;
+	left : 20px;
+	width : 160px;
+	height : 60px;
+	background : yellow;
+}
+</style>
+</head>
+<body>
+	
+<!-- 실습 영역 -->
+	<!-- 1. attr_remove
+	<button>removeAttr 메서드 테스트</button>
+	<input type="text" value="속성 삭제 테스트"> -->
+	
+	<!-- 2. prop_remove 
+	<button>removeProp 메서드 테스트</button>
+	<input type="radio" checked="checked"> -->
+	
+	<!-- 3. empty
+	<button>empty 메서드 테스트</button>
+	<div id="outer">
+		<div id="inner"></div>
+	</div> -->
+	
+	<!-- 4. remove
+	<button>remove 메서드 테스트</button>
+	<div id="outer">
+		<div id="inner"></div>
+	</div> -->
+	
+	<!-- 5. detach
+	<button>detach 메서드 테스트</button>
+	<div id="outer">
+		<div id="inner"></div>
+	</div> -->
+	
+	<!-- 6. unwrap
+	<div id="outer">
+		<div id="inner"></div>
+	</div> -->
+
+
+<div id="result" style="display:none; margin-top:100px">
+	<!-- Result : Text -->
+	<div class="text" style="display:none">
+		<p><strong>* TEXT 결과 값</strong></p>
+		<p class="description" style="background:#eee"></p>
+	</div>
+</div>	
+<script>
+
+// 결과 확인이 필요한 부분만 마크업 코드와 순서를 맞춰 해당 주석을 풀어주세요.
+
+// Result : Text
+function resultText( target ) {
+	var $result = $("#result");
+	
+	$result
+		.show()
+		.find(".text")
+		.show();
+		
+	if( !target ) {
+		$result
+			.find(".text .description")
+			.text("값 없음.");
+		if( target.length != 0 ) {
+			$result
+				.find(".text .description")
+				.text( target );
+		}
+	} else {
+		$result
+			.find(".text .description")
+			.text( target );
+	}
+}
+
+
+// 1. removeAttr
+//$("button").click(function() {
+//	$("input").removeAttr("value");
+//	resultText( $("input").attr("value") );
+//});
+
+
+
+// 2. removeProp
+//$("button").click(function() {
+//	$('input').removeProp('checked');
+//	resultText( $('input').prop('checked') );	
+//});
+
+
+// 3. empty
+//$("button").click(function() {
+//	$("#outer").empty();
+//});
+
+// 4. remove
+//$("button").click(function() {
+//	$("#outer").remove();
+//});
+
+// 5. detach
+// 5-1. if) remove
+//var $inner;
+//
+//$("button").click(function() {
+//	if( $("#inner").length > 0 ) {
+//		$inner = $("#inner").remove();
+//	} else {
+//		$("#outer").append( $inner );
+//	}
+//	
+//});
+//
+//$("#inner").click(function() {
+//	alert("안쪽 박스를 클릭했습니다.");
+//});
+
+// 5-2. if) detach
+//var $inner;
+//
+//$("button").click(function() {
+//	if( $("#inner").length > 0 ) {
+//		$inner = $("#inner").detach();
+//	} else {
+//		$("#outer").append( $inner );
+//	}
+//	
+//});
+//
+//$("#inner").click(function() {
+//	alert("안쪽 박스를 클릭했습니다.");
+//});
+
+// 6. unwrap
+//$('#inner').unwrap();
+</script>
+<!-- //실습 영역 -->
+</body>
+</html>

@@ -1,0 +1,156 @@
+﻿<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<title>DOM manipulation getter method</title>
+<script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+<style>
+#outer {
+	display : inline-block;
+	position : relative;
+	width : 200px;
+	height : 100px;
+	background : #eee
+}
+
+#inner {
+	position : absolute;
+	top : 30px;
+	left : 30px;
+	width : 100%;
+	height : 100%;
+	background : #000
+}
+
+#long {
+	width : 1px;
+	height: 3000px;
+	background : #000
+}
+
+#wide {
+	width : 3000px;
+	height: 1px;
+	background : #000
+}
+</style>
+</head>
+<body>
+
+<!-- 실습 영역 -->
+	<!-- 1. attr_getter
+	<div id="test" class="클래스_최초">DIV, id="test" class="클래스_최초"</div> -->
+	
+	<!-- 2. attr_getter + prop_getter
+	<input type="radio">  -->
+	
+	<!-- 3. css_getter
+	<div id="test" style="border:1px solid">DIV, id="test"</div> -->
+	
+	<!-- 4. width_getter 
+	<div id="test" style="border:1px solid">DIV, id="test"</div> -->
+	
+	<!-- 5. height_getter
+	<div id="test" style="border:1px solid">DIV, id="test"</div> -->
+	
+	<!-- 6. offset_getter
+	<div id="outer">
+		<div id="inner"></div>
+	</div> -->
+	
+	<!-- 7. position_getter
+	<div id="outer">
+		<div id="inner"></div>
+	</div> -->
+	
+	<!-- 8. scrollTop_getter
+	<button style="position:fixed; top:20px; left:20px">scrollTop 테스트</button>
+	<div id="long"></div> -->
+	
+	<!-- 9. scrollLeft_getter
+	<button style="position:fixed; top:20px; left:20px">scrollLeft 테스트</button>
+	<div id="wide"></div> -->
+
+
+	<div id="result" style="display:none; margin-top:100px">
+	<!-- Result : Text -->
+		<div class="text" style="display:none">
+			<p><strong>* TEXT 결과 값</strong></p>
+			<p class="description" style="background:#eee"></p>
+		</div>
+	</div>	
+<script>
+
+// 결과 확인이 필요한 부분만 마크업 코드와 순서를 맞춰 해당 주석을 풀어주세요.
+
+// Result : Text
+function resultText( target ) {
+	var	$result = $("#result");
+	
+		$result
+			.show()
+			.find(".text")
+			.show();
+		
+	if( !target ) {
+		$result
+			.find(".text .description")
+			.text("값 없음.");
+	if( target.length != 0 ) {
+		$result
+			.find(".text .description")
+			.text( target );
+		}
+	} else {
+		$result
+			.find(".text .description")
+			.text( target );
+	}
+}
+
+
+// 1. attr_getter
+//resultText( $("#test").attr("class") );
+
+// 2. attr_getter + prop_getter
+//resultText( $("input").attr("checked") );
+//resultText( $("input").prop("checked") );
+
+// 3. css_getter
+//resultText( $("#test").css("width") );
+
+// 4. width_getter
+//resultText( $("#test").width() );
+
+// 5. height_getter
+//resultText( $("#test").height() );
+
+// 6. offset_getter
+//var result = $("#outer").offset().top + "px";
+//	result += ", " + $("#outer").offset().left + "px";
+//	result += ", " + $("#inner").offset().top + "px";
+//	result += ", " + $("#inner").offset().left + "px";
+//	
+//resultText( result );
+
+// 7. position_getter
+//var result = $("#outer").position().top + "px";
+//	result += ", " + $("#outer").position().left + "px";
+//	result += ", " + $("#inner").position().top + "px";
+//	result += ", " + $("#inner").position().left + "px";
+//	
+//resultText( result );
+
+// 8. scrollTop_getter
+//$("button").click(function() {
+//	alert( $(document).scrollTop() );
+//});
+
+// 9. scrollLeft_getter
+//$("button").click(function() {
+//	alert( $(document).scrollLeft() );
+//});
+</script>
+<!-- //실습 영역 -->
+</body>
+</html>

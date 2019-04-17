@@ -1,0 +1,24 @@
+﻿<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<title>결과값표시기능 - Selector #1</title>
+<script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+</head>
+<body>
+
+	<p>P 태그</p>
+	<div>DIV 태그</div>
+	<p>P 태그</p>
+
+<script>
+// 함수 선언 : resultSelector
+function resultSelector( selector ) {
+	selector.css({ outline : "3px solid red" });
+}
+
+// 함수 실행 : resultSelector
+resultSelector( $("p") );
+</script>
+</body>
+</html>

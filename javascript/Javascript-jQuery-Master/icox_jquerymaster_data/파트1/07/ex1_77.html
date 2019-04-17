@@ -1,0 +1,30 @@
+<!DOCTYPE HTML>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<title>이벤트 this</title>	
+	<style>
+		*{margin:0;padding:0;}
+		div{cursor:pointer;}		
+	</style>
+	<script>
+		window.onload = function(){
+			var bt = document.getElementById("bt");			
+			var check = false;
+			bt.onclick = function(){
+				if(!check){
+					this.style.background = "red";
+					check= true;
+				}else{
+					this.style.background = "orange";
+					check = false;
+				}               
+			}
+			bt.onclick();
+		}
+	</script>	
+</head>
+<body>
+	<div id="bt">클릭</div>    
+</body>
+</html>

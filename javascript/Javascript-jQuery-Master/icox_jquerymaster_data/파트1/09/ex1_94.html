@@ -1,0 +1,31 @@
+<!DOCTYPE HTML>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<title>문서 객체를 상대위치에서 선택하는 속성들</title>
+	<script>
+		window.onload = function(){
+			var gnb = document.getElementById("gnb");
+			var gnbA = gnb.getElementsByTagName("a");
+			var result = gnbA[0].parentNode.parentNode.id + "\n";
+			result += gnbA[0].parentNode.nextSibling.nextSibling.firstChild + "\n";
+			result += gnb.lastChild.previousSibling.className;
+			alert(result);
+			gnbA[0].onclick = function(){
+				this.parentNode.style.backgroundColor = "red";
+				return false;
+			}
+
+		}
+	</script>
+</head>
+<body>
+	<div>		
+		<ul id="gnb">
+			<li><a href="#a">메뉴1</a></li>
+			<li><a href="#b">메뉴2</a></li>
+			<li class="last"><a href="#c">메뉴3</a></li>
+		</ul>				
+	</div>
+</body>
+</html>

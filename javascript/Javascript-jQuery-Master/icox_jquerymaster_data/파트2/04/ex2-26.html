@@ -1,0 +1,55 @@
+﻿<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<title>DOM manipulation movement method</title>
+<script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+<style>
+.box { background : red !important }
+
+#wrap div {
+	width : 90px; 
+	height : 90px;
+	font-size : 5em;
+	border : 1px solid
+}
+</style>
+</head>
+<body>
+
+	<div id="wrap">
+		<div>0</div>
+		<div>1</div>
+		<div>2</div>
+	</div>
+
+<script>
+
+// 결과 확인이 필요한 부분만 해당 주석을 풀어주세요.
+
+// 1. prepend
+//$("#wrap").prepend("<div class='box'/>");
+
+// 2. append
+//$("#wrap").append("<div class='box'/>");
+
+// 3. prependTo
+//$("<div class='box'/>").prependTo("#wrap");
+
+// 4.appendTo
+//$("<div class='box'/>").appendTo("#wrap");
+
+// 5. before
+//$("#wrap div:eq(1)").before("<div class='box'/>");
+
+// 6. after
+//$("#wrap div:eq(-2)").after("<div class='box'/>");
+
+// 7. insertBefore
+//$("<div class='box'/>").insertBefore("#wrap div:eq(1)");
+
+// 8. insertAfter
+//$("<div class='box'/>").insertAfter("#wrap div:eq(-2)");
+</script>
+</body>
+</html>

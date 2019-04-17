@@ -1,0 +1,21 @@
+<!DOCTYPE HTML>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<title>자바스크립트</title>
+	<script>
+		function factorial(n){
+			if(n == 0){
+				document.write('호출 끝')
+			}else{
+				document.write('호출 ' + n + '<br>');
+				//factorial(n-1);
+				arguments.callee(n-1);
+			}
+		}
+		factorial(10);
+	</script>
+</head>
+<body>	
+</body>
+</html>

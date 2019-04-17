@@ -1,0 +1,35 @@
+<!DOCTYPE HTML>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<title>스크롤 top 버튼</title>
+	<style>
+		*{margin:0;padding:0;}	
+		body{font-family:"돋움",dotum,sans-serif;font-size:12px;color:#000;}
+		div{height:500px;font-size:80px;text-align:center;line-height:500px;border-bottom:1px solid #ccc;}
+		#top_bt{display:none;width:30px;height:30px;font-size:12px;background:red;color:white;text-align:center;line-height:30px;position:fixed;right:0;bottom:10%;cursor:pointer;}		
+	</style>
+	<script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+	<script>
+		$(function(){
+			$(window).scroll(function(){
+				if($(this).scrollTop() > 200){
+					$("#top_bt").fadeIn("fast");
+				}else{
+					$("#top_bt").fadeOut("fast");
+				}
+			});
+			$("#top_bt").click(function(){
+				$("html,body").animate({scrollTop:0},200);
+			});			
+		});
+	</script>
+</head>
+<body>
+	<div id="top_bt">top</div>
+	<div>CONTENT01</div>
+	<div>CONTENT02</div>
+	<div>CONTENT03</div>
+	<div>CONTENT04</div>
+</body>
+</html>

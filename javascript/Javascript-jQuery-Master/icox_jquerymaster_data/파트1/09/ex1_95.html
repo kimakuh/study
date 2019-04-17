@@ -1,0 +1,36 @@
+<!DOCTYPE HTML>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<title>nodeType</title>
+	<script>
+		window.onload = function(){
+			var gnb = document.getElementById("gnb");
+			var gnbChilds = gnb.childNodes;	
+			var child = new Array();
+			var count = 0;
+			for(var i=0;i<gnbChilds.length;i++){				
+				if(gnbChilds[i].nodeType == 1){
+					child[count] = gnbChilds[i];
+					alert(child[count].tagName);
+					count++;					
+				}				
+			}			
+			alert(child.length);
+			
+			/*for(var i in gnbChilds){
+				alert(gnbChilds[i]);
+			}*/
+		}
+	</script>
+</head>
+<body>
+	<div>		
+		<ul id="gnb">
+			<li><a href="#">메뉴1</a></li>
+			<li><a href="#">메뉴2</a></li>
+			<li><a href="#">메뉴3</a></li>
+		</ul>				
+	</div>
+</body>
+</html>

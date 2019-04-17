@@ -1,0 +1,23 @@
+﻿<!DOCTYPE HTML>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<title>form 객체</title>	
+	<script>
+		function check(){
+			var frm = document.frm;
+			if(!frm.product.value){
+				alert("상품명을 입력하세요!");
+				frm.product.focus();
+				return false;
+			}			
+		}
+	</script>
+</head>
+<body>	
+	<form action="#" name="frm" onsubmit="return check()">		
+		<label for="product">상품입력</label><input type="text" name="product" id="product" />			
+		<input type="submit" value="검색" />		
+	</form>
+</body>
+</html>                                

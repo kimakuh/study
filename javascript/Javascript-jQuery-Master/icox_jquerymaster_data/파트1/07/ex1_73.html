@@ -1,0 +1,23 @@
+<!DOCTYPE HTML>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<title>기본 이벤트의 실행 방지</title>	
+	<script>
+		window.onload = function(){
+			var a = document.getElementById("a");		
+			a.onclick = function(event){
+				alert("아이콕스");
+				if(window.event){
+					window.event.returnValue = false;
+				}else{
+					event.preventDefault();
+				}	
+			}
+		}
+	</script>	
+</head>
+<body>
+	<div><a href="http://icoxpublish.com/" id="a">아이콕스</a></div>	
+</body>
+</html>

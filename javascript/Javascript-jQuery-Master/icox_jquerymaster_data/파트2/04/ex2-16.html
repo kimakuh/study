@@ -1,0 +1,129 @@
+﻿<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<title>DOM traversing Filter Method</title>
+<script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+</head>
+<body>
+
+<!-- 실습 영역 -->
+	<div id="root_wrap" style="position:relative">
+		<div id="root">
+			<p id="first">P태그 : #1, id="first"</p>
+			<p>P태그 : #2</p>
+			<p id="target"><a href="#"><b>P태그 : #3, id="target"</b></a></p>
+			<p>P태그 : #4</p>
+			<p><b>P태그 : #5</b></p>
+			<p id="last">P태그 : #6, id="last"</p>
+		</div>
+	</div>
+	
+<div id="result" style="display:none; margin-top:100px">
+	<div class="text" style="display:none">
+		<p><strong>* TEXT 결과 값</strong></p>
+		<p class="description"></p>
+	</div>
+	<div class="boolean" style="display:none">
+		<p><strong>* Boolean 결과 값</strong></p>
+		<div class="true" style="color:#fff; background:blue">TRUE</div>
+		<div class="false" style="color:#fff; background:red">FALSE</div>
+	</div>
+</div>
+<script>
+
+// 결과 확인이 필요한 부분만 해당 주석을 풀어주세요.
+
+function resultSelector( selector, lineColor ) {
+	if( !lineColor ) lineColor = "red";
+	selector.css({ outline : "3px solid " + lineColor });
+}
+
+function resultText( target ) {
+	var $result = $("#result");
+	
+	$result
+		.show()
+		.find(".text")
+		.show();
+		
+	if( !target ) {
+		$result
+			.find(".text .description")
+			.text("값 없음.");
+		if( target.length != 0 ) {
+			$result
+				.find(".text .description")
+				.text( target );
+		}
+	} else {
+		$result
+			.find(".text .description")
+			.text( target );
+	}
+}
+
+function resultBoolean( result ) {
+	var $result = $("#result");
+	
+	$result
+		.show()
+		.find(".boolean")
+		.show();
+	if( result ) {
+		$result.find(".boolean .false").hide();
+	} else {
+		$result.find(".boolean .true").hide();
+	}
+}
+
+	// 1. .filter()
+	//resultSelector( $("#root p").filter("[id]") );
+	//resultSelector( 
+	//	$("#root p").filter(function( index, element ) {
+	//		if( index % 2 == 0 ) {
+	//			return this;
+	//		}
+	//	}) 
+	//);
+	//resultSelector( $("p").filter( $("#last") ) );
+
+	// 2. .eq()
+	//resultSelector( $("#root p").eq(2) );
+	
+	// 3. .first()
+	//resultSelector( $("#root p").first() );
+	
+	// 4. .last()
+	//resultSelector( $("#root p").last() );
+	
+	// 5. .slice()
+	//resultSelector( $("#root p").slice(1) );
+	//resultSelector( $("#root p").slice(1, 4) );
+	
+	// 6. .map()
+	//var value_filter = $("#root p").filter(function(index, element) { 
+	//	return $(this).text();
+	//});
+	//resultText( typeof value_filter[0] );
+	//
+	//var value_map = $("#root p").map(function(index, element) { 
+	//	return $(this).text();
+	//});
+	//resultText( typeof value_map[0] );
+	
+	
+	// 7. .has()
+	//resultSelector( $("#target").has("a") );
+	//resultSelector( $("#last").has("a") );
+	
+	// 8. .is(), boolean
+	//resultBoolean( $("#first").find("*").is("a") );
+	//resultBoolean( $("#target").find("*").is("a") );
+	
+	// 9. .not()
+	//resultSelector( $("#root").find("*").not("div, p") );
+</script>
+<!-- //실습 영역 -->
+</body>
+</html>
